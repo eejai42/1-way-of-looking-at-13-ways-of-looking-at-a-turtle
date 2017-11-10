@@ -164,6 +164,7 @@
         </TurtleCommand>
         <TurtleCommand>
             <Name>Turn</Name>
+            <Parameter>Degrees</Parameter>
         </TurtleCommand>
         <TurtleCommand>
             <Name>PenUp</Name>
@@ -204,32 +205,38 @@
         <PredifinedScriptStep>
             <PredefinedScript>Triangle</PredefinedScript>
             <Command>Move</Command>
-            <Argument>100</Argument>
+            <Argument>200</Argument>
+            <ArgumentType>Distance</ArgumentType>
         </PredifinedScriptStep>
         <PredifinedScriptStep>
             <PredefinedScript>Triangle</PredefinedScript>
             <Command>Turn</Command>
             <Argument>120</Argument>
+            <ArgumentType>Degrees</ArgumentType>
         </PredifinedScriptStep>
         <PredifinedScriptStep>
             <PredefinedScript>Triangle</PredefinedScript>
             <Command>Move</Command>
-            <Argument>100</Argument>
+            <Argument>200</Argument>
+            <ArgumentType>Distance</ArgumentType>
         </PredifinedScriptStep>
         <PredifinedScriptStep>
             <PredefinedScript>Triangle</PredefinedScript>
             <Command>Turn</Command>
             <Argument>120</Argument>
+            <ArgumentType>Degrees</ArgumentType>
         </PredifinedScriptStep>
         <PredifinedScriptStep>
             <PredefinedScript>Triangle</PredefinedScript>
             <Command>Move</Command>
-            <Argument>100</Argument>
+            <Argument>200</Argument>
+            <ArgumentType>Distance</ArgumentType>
         </PredifinedScriptStep>
         <PredifinedScriptStep>
             <PredefinedScript>Triangle</PredefinedScript>
             <Command>Turn</Command>
             <Argument>120</Argument>
+            <ArgumentType>Degrees</ArgumentType>
         </PredifinedScriptStep>
         <PredifinedScriptStep>
             <PredefinedScript>ThreeLines</PredefinedScript>
@@ -240,11 +247,13 @@
             <PredefinedScript>ThreeLines</PredefinedScript>
             <Command>SetColor</Command>
             <Argument>Black</Argument>
+            <ArgumentType>Color</ArgumentType>
         </PredifinedScriptStep>
         <PredifinedScriptStep>
             <PredefinedScript>ThreeLines</PredefinedScript>
             <Command>Move</Command>
             <Argument>100</Argument>
+            <ArgumentType>Distance</ArgumentType>
         </PredifinedScriptStep>
         <PredifinedScriptStep>
             <PredefinedScript>ThreeLines</PredefinedScript>
@@ -255,16 +264,19 @@
             <PredefinedScript>ThreeLines</PredefinedScript>
             <Command>Turn</Command>
             <Argument>90</Argument>
+            <ArgumentType>Degrees</ArgumentType>
         </PredifinedScriptStep>
         <PredifinedScriptStep>
             <PredefinedScript>ThreeLines</PredefinedScript>
             <Command>Move</Command>
             <Argument>100</Argument>
+            <ArgumentType>Distance</ArgumentType>
         </PredifinedScriptStep>
         <PredifinedScriptStep>
             <PredefinedScript>ThreeLines</PredefinedScript>
             <Command>Turn</Command>
             <Argument>90</Argument>
+            <ArgumentType>Degrees</ArgumentType>
         </PredifinedScriptStep>
         <PredifinedScriptStep>
             <PredefinedScript>ThreeLines</PredefinedScript>
@@ -275,11 +287,13 @@
             <PredefinedScript>ThreeLines</PredefinedScript>
             <Command>SetColor</Command>
             <Argument>Red</Argument>
+            <ArgumentType>Color</ArgumentType>
         </PredifinedScriptStep>
         <PredifinedScriptStep>
             <PredefinedScript>ThreeLines</PredefinedScript>
             <Command>Move</Command>
             <Argument>100</Argument>
+            <ArgumentType>Distance</ArgumentType>
         </PredifinedScriptStep>
         <PredifinedScriptStep>
             <PredefinedScript>ThreeLines</PredefinedScript>
@@ -290,16 +304,19 @@
             <PredefinedScript>ThreeLines</PredefinedScript>
             <Command>Turn</Command>
             <Argument>90</Argument>
+            <ArgumentType>Degrees</ArgumentType>
         </PredifinedScriptStep>
         <PredifinedScriptStep>
             <PredefinedScript>ThreeLines</PredefinedScript>
             <Command>Move</Command>
             <Argument>100</Argument>
+            <ArgumentType>Distance</ArgumentType>
         </PredifinedScriptStep>
         <PredifinedScriptStep>
             <PredefinedScript>ThreeLines</PredefinedScript>
             <Command>Turn</Command>
             <Argument>90</Argument>
+            <ArgumentType>Degrees</ArgumentType>
         </PredifinedScriptStep>
         <PredifinedScriptStep>
             <PredefinedScript>ThreeLines</PredefinedScript>
@@ -310,56 +327,67 @@
             <PredefinedScript>ThreeLines</PredefinedScript>
             <Command>SetColor</Command>
             <Argument>Blue</Argument>
+            <ArgumentType>Color</ArgumentType>
         </PredifinedScriptStep>
         <PredifinedScriptStep>
             <PredefinedScript>ThreeLines</PredefinedScript>
             <Command>Turn</Command>
             <Argument>45</Argument>
+            <ArgumentType>Degrees</ArgumentType>
         </PredifinedScriptStep>
         <PredifinedScriptStep>
             <PredefinedScript>ThreeLines</PredefinedScript>
             <Command>Move</Command>
             <Argument>100</Argument>
+            <ArgumentType>Distance</ArgumentType>
         </PredifinedScriptStep>
         <PredifinedScriptStep>
             <PredefinedScript>Box</PredefinedScript>
             <Command>Move</Command>
             <Argument>100</Argument>
+            <ArgumentType>Distance</ArgumentType>
         </PredifinedScriptStep>
         <PredifinedScriptStep>
             <PredefinedScript>Box</PredefinedScript>
             <Command>Turn</Command>
             <Argument>90</Argument>
+            <ArgumentType>Degrees</ArgumentType>
         </PredifinedScriptStep>
         <PredifinedScriptStep>
             <PredefinedScript>Box</PredefinedScript>
             <Command>Move</Command>
             <Argument>100</Argument>
+            <ArgumentType>Distance</ArgumentType>
         </PredifinedScriptStep>
         <PredifinedScriptStep>
             <PredefinedScript>Box</PredefinedScript>
             <Command>Turn</Command>
             <Argument>90</Argument>
+            <ArgumentType>Degrees</ArgumentType>
         </PredifinedScriptStep>
         <PredifinedScriptStep>
             <PredefinedScript>Box</PredefinedScript>
             <Command>Move</Command>
             <Argument>100</Argument>
+            <ArgumentType>Distance</ArgumentType>
         </PredifinedScriptStep>
         <PredifinedScriptStep>
             <PredefinedScript>Box</PredefinedScript>
             <Command>Turn</Command>
             <Argument>90</Argument>
+            <ArgumentType>Degrees</ArgumentType>
         </PredifinedScriptStep>
         <PredifinedScriptStep>
             <PredefinedScript>Box</PredefinedScript>
             <Command>Move</Command>
             <Argument>100</Argument>
+            <ArgumentType>Distance</ArgumentType>
         </PredifinedScriptStep>
         <PredifinedScriptStep>
             <PredefinedScript>Box</PredefinedScript>
             <Command>Turn</Command>
             <Argument>90</Argument>
+            <ArgumentType>Degrees</ArgumentType>
         </PredifinedScriptStep>
     </PredifinedScriptSteps>
 </twolaat>

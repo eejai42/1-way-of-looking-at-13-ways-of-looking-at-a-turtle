@@ -41,6 +41,7 @@
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="OOTurtleBase.fsx" />
     <None Include="01-OOTurtle.fsx" />
     <None Include="02-FPTurtle.fsx" />
     <None Include="03-Api_OO_Core.fsx" />

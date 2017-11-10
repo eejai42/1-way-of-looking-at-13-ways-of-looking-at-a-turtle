@@ -90,9 +90,7 @@ module OOTurtleClient =
 // OO Turtle tests
 // ======================================
 
-(*
 OOTurtleClient.drawTriangle() 
 OOTurtleClient.drawThreeLines() 
 OOTurtleClient.drawPolygon 4 
-*)
 

@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "13-ways-of-looking-at-a-turtle", "13-ways-of-looking-at-a-turtle.fsproj", "{3DED8669-07BB-4E9F-9764-F393D3A5549D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{95A85D78-7B0D-48B5-9865-648384058010}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,15 @@ Global
 		{3DED8669-07BB-4E9F-9764-F393D3A5549D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DED8669-07BB-4E9F-9764-F393D3A5549D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DED8669-07BB-4E9F-9764-F393D3A5549D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95A85D78-7B0D-48B5-9865-648384058010}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95A85D78-7B0D-48B5-9865-648384058010}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95A85D78-7B0D-48B5-9865-648384058010}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95A85D78-7B0D-48B5-9865-648384058010}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1352D082-55D9-41D6-AF37-C57898FB8144}
 	EndGlobalSection
 EndGlobal

@@ -59,14 +59,15 @@ open System
 open Common
 
 // ======================================
-// OO Turtle
+// FP Turtle
 // ======================================
 
 // see code in this file
-#load "../OOTurtleLib.fsx"
+#load "../FPTurtleLib.fsx"
+open FPTurtleLib
 
 // ======================================
-// OO Turtle Client
+// Helper Classes
 // ======================================
 
 module <xsl:value-of select="WayNumber" />Base = 

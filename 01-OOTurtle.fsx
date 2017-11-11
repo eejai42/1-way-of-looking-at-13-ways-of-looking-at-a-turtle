@@ -14,26 +14,12 @@ and the client talks to the turtle directly.
 
 #load "DerivedBaseClasses/W01Base.fsx"
 
-// #load "Common.fsx"
-
-open System
 open Common
-
-
-
-// ======================================
-// OO Turtle
-// ======================================
-// #load "OOTurtleLib.fsx"
-
-// see code in this file
-
 open W01Base
 
 // ======================================
 // OO Turtle Client
 // ======================================
-
 
 module OOTurtleClient = 
     open OOTurtleLib

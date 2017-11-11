@@ -19,78 +19,87 @@ open System
 open Common
 
 // ======================================
-// OO Turtle
+// FP Turtle
 // ======================================
 
 // see code in this file
-#load "../OOTurtleLib.fsx"
+#load "../FPTurtleLib.fsx"
+open FPTurtleLib
 
 // ======================================
-// OO Turtle Client
+// WO2 helpers
 // ======================================
 
 module W02Base = 
-    open OOTurtleLib
+    open FPTurtleLib
 
     /// Function to log a message
     let log message =
         printfn "%s" message 
 
-    
+    let move = Turtle.move log
+    let turn = Turtle.turn log
+    let penDown = Turtle.penDown log
+    let penUp = Turtle.penUp log
+    let setColor = Turtle.setColor log
+
     
     let drawTriangle() = 
         printfn "PRINTING Triangle!"
-        let turtle = Turtle(log)
-        
-        turtle.Move 100.0
-        turtle.Turn 120.0<Degrees>
-        turtle.Move 100.0
-        turtle.Turn 120.0<Degrees>
-        turtle.Move 100.0
-        turtle.Turn 120.0<Degrees>
+
+        Turtle.initialTurtleState
+        |> move 100.0 
+        |> turn 120.0<Degrees>
+        |> move 100.0 
+        |> turn 120.0<Degrees>
+        |> move 100.0 
+        |> turn 120.0<Degrees>
+        // back home at (0,0) with angle 0
     
     
     let drawThreeLines() = 
         printfn "PRINTING ThreeLines!"
-        let turtle = Turtle(log)
-        
-        // Draw black line
-        turtle.PenDown ()
-        turtle.SetColor Black
-        turtle.Move 100.0
-        // Move without Drawing
-        turtle.PenUp ()
-        turtle.Turn 90.0<Degrees>
-        turtle.Move 100.0
-        turtle.Turn 90.0<Degrees>
-        // Draw red line
-        turtle.PenDown ()
-        turtle.SetColor Red
-        turtle.Move 100.0
-        // Move without Drawing
-        turtle.PenUp ()
-        turtle.Turn 90.0<Degrees>
-        turtle.Move 100.0
-        turtle.Turn 90.0<Degrees>
-        // Back home at (0,0) with angle 0, Draw diagonal blue line
-        turtle.PenDown ()
-        turtle.SetColor Blue
-        turtle.Turn 45.0<Degrees>
-        turtle.Move 100.0
+       
+        Turtle.initialTurtleState
+        // draw black line 
+        |> penDown
+        |> setColor Black
+        |> move 100.0 
+        // move without drawing
+        |> penUp
+        |> turn 90.0<Degrees>
+        |> move 100.0 
+        |> turn 90.0<Degrees>
+        // draw red line 
+        |> penDown
+        |> setColor Red
+        |> move 100.0
+        // move without drawing
+        |> penUp
+        |> turn 90.0<Degrees>
+        |> move 100.0 
+        |> turn 90.0<Degrees>
+        // back home at (0,0) with angle 0
+        // draw diagonal blue line 
+        |> penDown
+        |> setColor Blue
+        |> turn 45.0<Degrees>
+        |> move 100.0
     
     
     let drawBox() = 
         printfn "PRINTING Box!"
-        let turtle = Turtle(log)
         
-        turtle.Move 100.0
-        turtle.Turn 90.0<Degrees>
-        turtle.Move 100.0
-        turtle.Turn 90.0<Degrees>
-        turtle.Move 100.0
-        turtle.Turn 90.0<Degrees>
-        turtle.Move 100.0
-        turtle.Turn 90.0<Degrees>
+        Turtle.initialTurtleState
+        |> move 100.0 
+        |> turn 90.0<Degrees>
+        |> move 100.0 
+        |> turn 90.0<Degrees>
+        |> move 100.0 
+        |> turn 90.0<Degrees>
+        |> move 100.0 
+        |> turn 90.0<Degrees>
+        // back home at (0,0) with angle 0
     
     
 

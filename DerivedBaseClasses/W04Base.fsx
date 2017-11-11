@@ -5,11 +5,14 @@ Part of "Thirteen ways of looking at a turtle"
 Related blog post: http://fsharpforfunandprofit.com/posts/13-ways-of-looking-at-a-turtle/
 ======================================
 
-Way #1: Simple OO -- a class with mutable state
+W04: API (OO/FP hybrid approach) -- OO API calling stateless functions
 
-In this design, a simple OO class represents the turtle,
-and the client talks to the turtle directly.
+In this design, an API layer communicates with pure turtle functions
+and the client talks to the API layer.
 
+The API layer manages the state (rather than the client) by storing a mutable turtle state.
+
+*This approach has been named \
 ====================================== *)
 
 #load "../Common.fsx"

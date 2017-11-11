@@ -26,11 +26,15 @@ Part of "Thirteen ways of looking at a turtle"
 Related blog post: http://fsharpforfunandprofit.com/posts/13-ways-of-looking-at-a-turtle/
 ======================================
 
-Way #1: Simple OO -- a class with mutable state
+W10: Event sourcing -- Building state from a list of past events
 
-In this design, a simple OO class represents the turtle,
-and the client talks to the turtle directly.
+In this design, the client sends a `Command` to a `CommandHandler`.
+The CommandHandler converts that to a list of events and stores them in an `EventStore`.
 
+In order to know how to process a Command, the CommandHandler builds the current state
+from scratch using the past events associated with that particular turtle.
+
+Neither the client nor the command handler needs to track state.  Only the EventStore is mutable.
 ====================================== *)
 
 #load "../Common.fsx"

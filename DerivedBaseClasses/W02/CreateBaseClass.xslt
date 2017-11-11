@@ -26,11 +26,12 @@ Part of "Thirteen ways of looking at a turtle"
 Related blog post: http://fsharpforfunandprofit.com/posts/13-ways-of-looking-at-a-turtle/
 ======================================
 
-Way #1: Simple OO -- a class with mutable state
+W02: Simple FP - a module of functions with immutable state
 
-In this design, a simple OO class represents the turtle,
-and the client talks to the turtle directly.
+In this design, the turtle state is immutable. A module contains functions that return a new turtle state,
+and the client uses these turtle functions directly.
 
+The client must keep track of the current state and pass it into the next function call.
 ====================================== *)
 
 #load "../Common.fsx"

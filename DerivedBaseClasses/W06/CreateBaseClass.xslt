@@ -26,11 +26,11 @@ Part of "Thirteen ways of looking at a turtle"
 Related blog post: http://fsharpforfunandprofit.com/posts/13-ways-of-looking-at-a-turtle/
 ======================================
 
-Way #1: Simple OO -- a class with mutable state
+W06: Dependency injection (using interfaces) - v2: records of functions
 
-In this design, a simple OO class represents the turtle,
-and the client talks to the turtle directly.
-
+In this design, an API layer communicates with a Turtle Interface (OO style) or a record of TurtleFunctions (FP style)
+rather than directly with a turtle.
+The client injects a specific turtle implementation via the API's constructor.
 ====================================== *)
 
 #load "../Common.fsx"

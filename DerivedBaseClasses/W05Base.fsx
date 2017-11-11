@@ -5,11 +5,16 @@ Part of "Thirteen ways of looking at a turtle"
 Related blog post: http://fsharpforfunandprofit.com/posts/13-ways-of-looking-at-a-turtle/
 ======================================
 
-Way #1: Simple OO -- a class with mutable state
+W05: API (hybrid approach) -- OO API posting messages to an Agent
 
-In this design, a simple OO class represents the turtle,
-and the client talks to the turtle directly.
+In this design, an API layer communicates with a TurtleAgent
+and the client talks to the API layer.
 
+Because the Agent has a message queue, all possible commands are managed with a
+single discriminated union type (`TurtleCommand`).
+
+There are no mutables anywhere. The Agent manages the turtle state by
+storing the current state as a parameter in the recursive message processing loop.
 ====================================== *)
 
 #load "../Common.fsx"

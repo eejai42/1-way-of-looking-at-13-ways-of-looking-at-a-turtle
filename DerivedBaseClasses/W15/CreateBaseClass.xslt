@@ -26,11 +26,12 @@ Part of "Thirteen ways of looking at a turtle"
 Related blog post: http://fsharpforfunandprofit.com/posts/13-ways-of-looking-at-a-turtle/
 ======================================
 
-Way #1: Simple OO -- a class with mutable state
+W15: API with capabilities
 
-In this design, a simple OO class represents the turtle,
-and the client talks to the turtle directly.
+In this design, the turtle exposes a list of functions (capabilities) after each action.
+These are the ONLY actions available to the client
 
+More on capability-based security at http://fsharpforfunandprofit.com/posts/capability-based-security/
 ====================================== *)
 
 #load "../Common.fsx"

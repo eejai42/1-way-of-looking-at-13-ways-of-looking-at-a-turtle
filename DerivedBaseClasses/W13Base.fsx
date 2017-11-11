@@ -5,11 +5,11 @@ Part of "Thirteen ways of looking at a turtle"
 Related blog post: http://fsharpforfunandprofit.com/posts/13-ways-of-looking-at-a-turtle/
 ======================================
 
-Way #1: Simple OO -- a class with mutable state
+W13: The interpreter pattern
 
-In this design, a simple OO class represents the turtle,
-and the client talks to the turtle directly.
+In this design, the client builds a data structure (`TurtleProgram`) that represents the instructions.
 
+This Turtle Program can then interpreted later in various ways
 ====================================== *)
 
 #load "../Common.fsx"

@@ -48,11 +48,9 @@ Part of "Thirteen ways of looking at a turtle"
 Related blog post: http://fsharpforfunandprofit.com/posts/13-ways-of-looking-at-a-turtle/
 ======================================
 
-Way #1: Simple OO -- a class with mutable state
+<xsl:value-of select="WayNumber"/>: <xsl:value-of select="Description" />
 
-In this design, a simple OO class represents the turtle,
-and the client talks to the turtle directly.
-
+<xsl:value-of select="Notes" />
 ====================================== *)
 
 #load "../Common.fsx"

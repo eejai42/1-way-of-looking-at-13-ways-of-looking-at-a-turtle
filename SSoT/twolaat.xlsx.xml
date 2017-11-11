@@ -198,7 +198,7 @@
   <PredifinedScriptStep>
     <PredefinedScript>Triangle</PredefinedScript>
     <Command>Move</Command>
-    <Argument>150</Argument>
+    <Argument>100</Argument>
     <ArgumentType>Distance</ArgumentType>
   </PredifinedScriptStep>
   <PredifinedScriptStep>
@@ -210,7 +210,7 @@
   <PredifinedScriptStep>
     <PredefinedScript>Triangle</PredefinedScript>
     <Command>Move</Command>
-    <Argument>150</Argument>
+    <Argument>100</Argument>
     <ArgumentType>Distance</ArgumentType>
   </PredifinedScriptStep>
   <PredifinedScriptStep>
@@ -222,7 +222,7 @@
   <PredifinedScriptStep>
     <PredefinedScript>Triangle</PredefinedScript>
     <Command>Move</Command>
-    <Argument>150</Argument>
+    <Argument>100</Argument>
     <ArgumentType>Distance</ArgumentType>
   </PredifinedScriptStep>
   <PredifinedScriptStep>

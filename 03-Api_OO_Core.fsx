@@ -15,100 +15,28 @@ input and returns a Result containing any errors.
 
 ====================================== *)
 
+#load "DerivedBaseClasses/W03Base.fsx"
 
 #load "Common.fsx"
 #load "OOTurtleLib.fsx"
 
+
 open System
 open Common
 
-// ======================================
-// Turtle Api Layer
-// ======================================
-
-module TurtleApiLayer = 
-    open OOTurtleLib
-
-    /// Define the exception for API errors
-    exception TurtleApiException of string
-
-    /// Function to log a message
-    let log message =
-        printfn "%s" message 
-
-    type TurtleApi() =
-
-        let turtle = Turtle(log)
-
-        // convert the distance parameter to a float, or throw an exception
-        let validateDistance distanceStr =
-            try
-                float distanceStr 
-            with
-            | ex -> 
-                let msg = sprintf "Invalid distance '%s' [%s]" distanceStr  ex.Message
-                raise (TurtleApiException msg)
-
-        // convert the angle parameter to a float<Degrees>, or throw an exception
-        let validateAngle angleStr =
-            try
-                (float angleStr) * 1.0<Degrees> 
-            with
-            | ex -> 
-                let msg = sprintf "Invalid angle '%s' [%s]" angleStr ex.Message
-                raise (TurtleApiException msg)
-
-        // convert the color parameter to a PenColor, or throw an exception
-        let validateColor colorStr =
-            match colorStr with
-            | "Black" -> Black
-            | "Blue" -> Blue
-            | "Red" -> Red
-            | _ -> 
-                let msg = sprintf "Color '%s' is not recognized" colorStr
-                raise (TurtleApiException msg)
-                
-        /// Execute the command string, or throw an exception
-        /// (Exec : commandStr:string -> unit)
-        member this.Exec (commandStr:string) = 
-            let tokens = commandStr.Split(' ') |> List.ofArray |> List.map trimString
-            match tokens with
-            | [ "Move"; distanceStr ] -> 
-                let distance = validateDistance distanceStr 
-                turtle.Move distance 
-            | [ "Turn"; angleStr ] -> 
-                let angle = validateAngle angleStr
-                turtle.Turn angle  
-            | [ "Pen"; "Up" ] -> 
-                turtle.PenUp()
-            | [ "Pen"; "Down" ] -> 
-                turtle.PenDown()
-            | [ "SetColor"; colorStr ] -> 
-                let color = validateColor colorStr 
-                turtle.SetColor color
-            | _ -> 
-                let msg = sprintf "Instruction '%s' is not recognized" commandStr
-                raise (TurtleApiException msg)
 
 // ======================================
 // Turtle Api Client
 // ======================================
 
 module TurtleApiClient = 
-    open TurtleApiLayer
+    open W03Base
 
     let drawTriangle() = 
-        let api = TurtleApi()
-        api.Exec "Move 100"
-        api.Exec "Turn 120"
-        api.Exec "Move 100"
-        api.Exec "Turn 120"
-        api.Exec "Move 100"
-        api.Exec "Turn 120"
-        // back home at (0,0) with angle 0
+        W03Base.drawTriangle();
             
     let drawThreeLines() = 
-        let api = TurtleApi()
+        let api = W03Base.TurtleApi()
         // draw black line 
         api.Exec "Pen Down"
         api.Exec "SetColor Black"
@@ -136,7 +64,7 @@ module TurtleApiClient =
 
     let drawPolygon n = 
         let angle = 180.0 - (360.0/float n) 
-        let api = TurtleApi()
+        let api = W03Base.TurtleApi()
 
         // define a function that draws one side
         let drawOneSide() = 
@@ -148,14 +76,13 @@ module TurtleApiClient =
             drawOneSide()
 
     let triggerError() = 
-        let api = TurtleApi()
+        let api = W03Base.TurtleApi()
         api.Exec "Move bad"
 
 // ======================================
 // Turtle API tests
 // ======================================
 
-(*
 TurtleApiClient.drawTriangle() 
 TurtleApiClient.drawThreeLines() 
 TurtleApiClient.drawPolygon 4 
@@ -163,5 +90,4 @@ TurtleApiClient.drawPolygon 4
 // test errors
 TurtleApiClient.triggerError()
 // Exception of type 'TurtleApiException' was thrown.
-*)
 

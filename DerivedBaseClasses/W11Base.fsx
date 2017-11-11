@@ -12,7 +12,7 @@ and the client talks to the turtle directly.
 
 ====================================== *)
 
-#load "Common.fsx"
+#load "../Common.fsx"
 
 open System
 open Common
@@ -22,13 +22,13 @@ open Common
 // ======================================
 
 // see code in this file
-#load "OOTurtleLib.fsx"
+#load "../OOTurtleLib.fsx"
 
 // ======================================
 // OO Turtle Client
 // ======================================
 
-module OOTurtleBase = 
+module W11Base = 
     open OOTurtleLib
 
     /// Function to log a message
@@ -41,11 +41,11 @@ module OOTurtleBase =
         printfn "PRINTING Triangle!"
         let turtle = Turtle(log)
         
-        turtle.Move 200.0
+        turtle.Move 150.0
         turtle.Turn 120.0<Degrees>
-        turtle.Move 200.0
+        turtle.Move 150.0
         turtle.Turn 120.0<Degrees>
-        turtle.Move 200.0
+        turtle.Move 150.0
         turtle.Turn 120.0<Degrees>
     
     

@@ -41,7 +41,19 @@
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="OOTurtleBase.fsx" />
+    <None Include="DerivedBaseClasses\W01Base.fsx" />
+    <None Include="DerivedBaseClasses\W02Base.fsx" />
+    <None Include="DerivedBaseClasses\W03Base.fsx" />
+    <None Include="DerivedBaseClasses\W04Base.fsx" />
+    <None Include="DerivedBaseClasses\W05Base.fsx" />
+    <None Include="DerivedBaseClasses\W06Base.fsx" />
+    <None Include="DerivedBaseClasses\W07Base.fsx" />
+    <None Include="DerivedBaseClasses\W08Base.fsx" />
+    <None Include="DerivedBaseClasses\W09Base.fsx" />
+    <None Include="DerivedBaseClasses\W10Base.fsx" />
+    <None Include="DerivedBaseClasses\W11Base.fsx" />
+    <None Include="DerivedBaseClasses\W12Base.fsx" />
+    <None Include="DerivedBaseClasses\W13Base.fsx" />
     <None Include="01-OOTurtle.fsx" />
     <None Include="02-FPTurtle.fsx" />
     <None Include="03-Api_OO_Core.fsx" />

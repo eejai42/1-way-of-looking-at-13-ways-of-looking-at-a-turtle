@@ -12,7 +12,7 @@ and the client talks to the turtle directly.
 
 ====================================== *)
 
-#load "OOTurtleBase.fsx"
+#load "DerivedBaseClasses/W01Base.fsx"
 
 // #load "Common.fsx"
 
@@ -28,7 +28,7 @@ open Common
 
 // see code in this file
 
-open OOTurtleBase
+open W01Base
 
 // ======================================
 // OO Turtle Client
@@ -44,10 +44,13 @@ module OOTurtleClient =
         printfn "%s" message 
 
     let drawTriangle() = 
-        OOTurtleBase.drawTriangle()
+        W01Base.drawTriangle()
             
     let drawThreeLines() = 
-        OOTurtleBase.drawThreeLines()
+        W01Base.drawThreeLines()
+
+    let drawBox() = 
+        W01Base.drawBox()
 
 
     let drawPolygon n = 
@@ -70,5 +73,6 @@ module OOTurtleClient =
 
 OOTurtleClient.drawTriangle() 
 OOTurtleClient.drawThreeLines() 
+OOTurtleClient.drawBox() 
 OOTurtleClient.drawPolygon 4 
 

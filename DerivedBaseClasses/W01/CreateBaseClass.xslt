@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl"
 >
@@ -17,7 +17,7 @@
             <FileSetFiles>
                 <FileSetFile>
                     <RelativePath>
-                        <xsl:text>../OOTurtleBase.fsx</xsl:text>
+                        <xsl:text>../W01Base.fsx</xsl:text>
                     </RelativePath>
                     <xsl:element name="FileContents" xml:space="preserve">(* ======================================
 01-OOTurtle.fsx
@@ -33,7 +33,7 @@ and the client talks to the turtle directly.
 
 ====================================== *)
 
-#load "Common.fsx"
+#load "../Common.fsx"
 
 open System
 open Common
@@ -43,13 +43,13 @@ open Common
 // ======================================
 
 // see code in this file
-#load "OOTurtleLib.fsx"
+#load "../OOTurtleLib.fsx"
 
 // ======================================
 // OO Turtle Client
 // ======================================
 
-module OOTurtleBase = 
+module W01Base = 
     open OOTurtleLib
 
     /// Function to log a message
@@ -77,3 +77,4 @@ module OOTurtleBase =
         </FileSet>
     </xsl:template>
 </xsl:stylesheet>
+

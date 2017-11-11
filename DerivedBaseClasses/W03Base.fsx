@@ -112,9 +112,12 @@ module W03Base =
 
     
     
+    
     let drawTriangle() = 
         printfn "PRINTING Triangle!"
         let api = TurtleApi()
+
+        
         api.Exec "Move 100"
         api.Exec "Turn 120"
         api.Exec "Move 100"
@@ -125,45 +128,47 @@ module W03Base =
     
     let drawThreeLines() = 
         printfn "PRINTING ThreeLines!"
-        // let turtle = Turtle(log)
+        let api = TurtleApi()
+
         
         // Draw black line
-        // turtle.PenDown ()
-        // turtle.SetColor Black
-        // turtle.Move 100.0
+        api.Exec "PenDown "
+        api.Exec "SetColor Black"
+        api.Exec "Move 100"
         // Move without Drawing
-        // turtle.PenUp ()
-        // turtle.Turn 90.0<Degrees>
-        // turtle.Move 100.0
-        // turtle.Turn 90.0<Degrees>
+        api.Exec "PenUp "
+        api.Exec "Turn 90"
+        api.Exec "Move 100"
+        api.Exec "Turn 90"
         // Draw red line
-        // turtle.PenDown ()
-        // turtle.SetColor Red
-        // turtle.Move 100.0
+        api.Exec "PenDown "
+        api.Exec "SetColor Red"
+        api.Exec "Move 100"
         // Move without Drawing
-        // turtle.PenUp ()
-        // turtle.Turn 90.0<Degrees>
-        // turtle.Move 100.0
-        // turtle.Turn 90.0<Degrees>
+        api.Exec "PenUp "
+        api.Exec "Turn 90"
+        api.Exec "Move 100"
+        api.Exec "Turn 90"
         // Back home at (0,0) with angle 0, Draw diagonal blue line
-        // turtle.PenDown ()
-        // turtle.SetColor Blue
-        // turtle.Turn 45.0<Degrees>
-        // turtle.Move 100.0
+        api.Exec "PenDown "
+        api.Exec "SetColor Blue"
+        api.Exec "Turn 45"
+        api.Exec "Move 100"
     
     
     let drawBox() = 
         printfn "PRINTING Box!"
-        // let turtle = Turtle(log)
+        let api = TurtleApi()
+
         
-        // turtle.Move 100.0
-        // turtle.Turn 90.0<Degrees>
-        // turtle.Move 100.0
-        // turtle.Turn 90.0<Degrees>
-        // turtle.Move 100.0
-        // turtle.Turn 90.0<Degrees>
-        // turtle.Move 100.0
-        // turtle.Turn 90.0<Degrees>
+        api.Exec "Move 100"
+        api.Exec "Turn 90"
+        api.Exec "Move 100"
+        api.Exec "Turn 90"
+        api.Exec "Move 100"
+        api.Exec "Turn 90"
+        api.Exec "Move 100"
+        api.Exec "Turn 90"
     
     
 

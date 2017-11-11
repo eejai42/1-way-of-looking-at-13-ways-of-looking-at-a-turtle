@@ -40,35 +40,107 @@ input and returns a Result containing any errors.
 open Common
 
 // ======================================
-// FP Turtle
+// OO Turtle
 // ======================================
 
 // see code in this file
-#load "../FPTurtleLib.fsx"
-open FPTurtleLib
+#load "../OOTurtleLib.fsx"
+open OOTurtleLib
+
+
+// ======================================
+// Turtle Api Layer
+// ======================================
+
+module TurtleApiLayer = 
+    open OOTurtleLib
+
+    /// Define the exception for API errors
+    exception TurtleApiException of string
+
+    /// Function to log a message
+    let log message =
+        printfn "%s" message 
+
+
 
 // ======================================
 // Way 03 Helper Classes
 // ======================================
 
 module W03Base = 
+    open TurtleApiLayer
 
     /// Function to log a message
     let log message =
         printfn "%s" message 
 
+
+
+    type TurtleApi() =
+
+        let turtle = Turtle(log)
+
+        // convert the distance parameter to a float, or throw an exception
+        let validateDistance distanceStr =
+            try
+                float distanceStr 
+            with
+            | ex -> 
+                let msg = sprintf "Invalid distance '%s' [%s]" distanceStr  ex.Message
+                raise (TurtleApiException msg)
+
+        // convert the angle parameter to a float&lt;Degrees>, or throw an exception
+        let validateAngle angleStr =
+            try
+                (float angleStr) * 1.0&lt;Degrees> 
+            with
+            | ex -> 
+                let msg = sprintf "Invalid angle '%s' [%s]" angleStr ex.Message
+                raise (TurtleApiException msg)
+
+        // convert the color parameter to a PenColor, or throw an exception
+        let validateColor colorStr =
+            match colorStr with
+            | "Black" -> Black
+            | "Blue" -> Blue
+            | "Red" -> Red
+            | _ -> 
+                let msg = sprintf "Color '%s' is not recognized" colorStr
+                raise (TurtleApiException msg)
+                
+        /// Execute the command string, or throw an exception
+        /// (Exec : commandStr:string -> unit)
+        member this.Exec (commandStr:string) = 
+            let tokens = commandStr.Split(' ') |> List.ofArray |> List.map trimString
+            match tokens with
+            | [ "Move"; distanceStr ] -> 
+                let distance = validateDistance distanceStr 
+                turtle.Move distance 
+            | [ "Turn"; angleStr ] -> 
+                let angle = validateAngle angleStr
+                turtle.Turn angle  
+            | [ "Pen"; "Up" ] -> 
+                turtle.PenUp()
+            | [ "Pen"; "Down" ] -> 
+                turtle.PenDown()
+            | [ "SetColor"; colorStr ] -> 
+                let color = validateColor colorStr 
+                turtle.SetColor color
+            | _ -> 
+                let msg = sprintf "Instruction '%s' is not recognized" commandStr
+                raise (TurtleApiException msg)
+
+    
     <xsl:for-each select="//PredifinedScript">
     <xsl:variable name="pds-name" select="Name" />
     let draw<xsl:value-of select="$pds-name" />() = 
         printfn "PRINTING <xsl:value-of select="$pds-name" />!"
-        // let turtle = Turtle(log)
+        let api = TurtleApi()
+
         <xsl:for-each select="//PredifinedScriptStep[normalize-space(PredefinedScript) = $pds-name]"><xsl:if test="normalize-space(Description) != ''">
         // <xsl:value-of select="Description" /></xsl:if><xsl:text>
-        // turtle.</xsl:text><xsl:value-of select="Command" /> <xsl:value-of select="Argument" /><xsl:choose>
-            <xsl:when test="ArgumentType = 'Degrees'">.0&lt;Degrees></xsl:when>
-            <xsl:when test="ArgumentType = 'Distance'">.0</xsl:when>
-            <xsl:when test="normalize-space(ArgumentType) = ''">()</xsl:when>
-        </xsl:choose></xsl:for-each>
+        api.Exec "</xsl:text><xsl:value-of select="Command" /> <xsl:value-of select="Argument" />"</xsl:for-each>
     </xsl:for-each>
     
 

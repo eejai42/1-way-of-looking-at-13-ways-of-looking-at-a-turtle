@@ -33,34 +33,13 @@ module TurtleApiClient =
     open W03Base
 
     let drawTriangle() = 
-        W03Base.drawTriangle();
+        W03Base.drawTriangle()
             
     let drawThreeLines() = 
-        let api = W03Base.TurtleApi()
-        // draw black line 
-        api.Exec "Pen Down"
-        api.Exec "SetColor Black"
-        api.Exec "Move 100"
-        // move without drawing
-        api.Exec "Pen Up"
-        api.Exec "Turn 90"
-        api.Exec "Move 100"
-        api.Exec "Turn 90"
-        // draw red line 
-        api.Exec "Pen Down"
-        api.Exec "SetColor Red"
-        api.Exec "Move 100"
-        // move without drawing
-        api.Exec "Pen Up"
-        api.Exec "Turn 90"
-        api.Exec "Move 100"
-        api.Exec "Turn 90"
-        // back home at (0,0) with angle 0
-        // draw diagonal blue line 
-        api.Exec "Pen Down"
-        api.Exec "SetColor Blue"
-        api.Exec "Turn 45"
-        api.Exec "Move 100"
+        W03Base.drawThreeLines()
+
+    let drawBox() =
+        W03Base.drawBox()
 
     let drawPolygon n = 
         let angle = 180.0 - (360.0/float n) 

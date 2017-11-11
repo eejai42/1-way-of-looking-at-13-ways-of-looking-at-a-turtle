@@ -1,11 +1,11 @@
 (* ======================================
-01-OOTurtle.fsx
+02-FPTurtle.fsx
 
 Part of "Thirteen ways of looking at a turtle"
 Related blog post: http://fsharpforfunandprofit.com/posts/13-ways-of-looking-at-a-turtle/
 ======================================
 
-W02: Simple FP - a module of functions with immutable state
+Way 02: Simple FP - a module of functions with immutable state
 
 In this design, the turtle state is immutable. A module contains functions that return a new turtle state,
 and the client uses these turtle functions directly.
@@ -15,7 +15,6 @@ The client must keep track of the current state and pass it into the next functi
 
 #load "../Common.fsx"
 
-open System
 open Common
 
 // ======================================
@@ -27,61 +26,60 @@ open Common
 open FPTurtleLib
 
 // ======================================
-// WO2 helpers
+// Way 02 Helper Classes
 // ======================================
 
 module W02Base = 
-    open FPTurtleLib
 
     /// Function to log a message
     let log message =
         printfn "%s" message 
 
+    
     let move = Turtle.move log
     let turn = Turtle.turn log
-    let penDown = Turtle.penDown log
     let penUp = Turtle.penUp log
+    let penDown = Turtle.penDown log
     let setColor = Turtle.setColor log
 
     
+    
     let drawTriangle() = 
         printfn "PRINTING Triangle!"
-
+        
         Turtle.initialTurtleState
-        |> move 100.0 
+        |> move 100.0
         |> turn 120.0<Degrees>
-        |> move 100.0 
+        |> move 100.0
         |> turn 120.0<Degrees>
-        |> move 100.0 
+        |> move 100.0
         |> turn 120.0<Degrees>
-        // back home at (0,0) with angle 0
     
     
     let drawThreeLines() = 
         printfn "PRINTING ThreeLines!"
-       
+        
         Turtle.initialTurtleState
-        // draw black line 
-        |> penDown
+        // Draw black line
+        |> penDown 
         |> setColor Black
-        |> move 100.0 
-        // move without drawing
-        |> penUp
+        |> move 100.0
+        // Move without Drawing
+        |> penUp 
         |> turn 90.0<Degrees>
-        |> move 100.0 
+        |> move 100.0
         |> turn 90.0<Degrees>
-        // draw red line 
-        |> penDown
+        // Draw red line
+        |> penDown 
         |> setColor Red
         |> move 100.0
-        // move without drawing
-        |> penUp
+        // Move without Drawing
+        |> penUp 
         |> turn 90.0<Degrees>
-        |> move 100.0 
+        |> move 100.0
         |> turn 90.0<Degrees>
-        // back home at (0,0) with angle 0
-        // draw diagonal blue line 
-        |> penDown
+        // Back home at (0,0) with angle 0, Draw diagonal blue line
+        |> penDown 
         |> setColor Blue
         |> turn 45.0<Degrees>
         |> move 100.0
@@ -91,15 +89,14 @@ module W02Base =
         printfn "PRINTING Box!"
         
         Turtle.initialTurtleState
-        |> move 100.0 
+        |> move 100.0
         |> turn 90.0<Degrees>
-        |> move 100.0 
+        |> move 100.0
         |> turn 90.0<Degrees>
-        |> move 100.0 
+        |> move 100.0
         |> turn 90.0<Degrees>
-        |> move 100.0 
+        |> move 100.0
         |> turn 90.0<Degrees>
-        // back home at (0,0) with angle 0
     
     
 

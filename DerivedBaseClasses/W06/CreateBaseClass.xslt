@@ -20,13 +20,13 @@
                         <xsl:text>../W06Base.fsx</xsl:text>
                     </RelativePath>
                     <xsl:element name="FileContents" xml:space="preserve">(* ======================================
-06-DependencyInjection_Interface-2.fsx
+06-DependencyInjection_Interface-1.fsx
 
 Part of "Thirteen ways of looking at a turtle"
 Related blog post: http://fsharpforfunandprofit.com/posts/13-ways-of-looking-at-a-turtle/
 ======================================
 
-Way 06: Dependency injection (using interfaces) - v2: records of functions
+Way 06: Dependency injection (using interfaces) -- v1: OO interface
 
 In this design, an API layer communicates with a Turtle Interface (OO style) or a record of TurtleFunctions (FP style)
 rather than directly with a turtle.

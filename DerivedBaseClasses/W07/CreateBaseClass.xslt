@@ -20,16 +20,18 @@
                         <xsl:text>../W07Base.fsx</xsl:text>
                     </RelativePath>
                     <xsl:element name="FileContents" xml:space="preserve">(* ======================================
-07-DependencyInjection_Functions-2.fsx
+07-DependencyInjection_Functions-1.fsx
 
 Part of "Thirteen ways of looking at a turtle"
 Related blog post: http://fsharpforfunandprofit.com/posts/13-ways-of-looking-at-a-turtle/
 ======================================
 
-Way 07: Dependency injection using functions (v2: pass in a single function)
+Way 07: Dependency injection using functions (v1: pass in all functions)
 
 In this design, an API layer communicates via one or more functions that are passed in as parameters to the API call.
-These functions are typically partially applied so that the call site is decoupled from the \
+These functions are typically partially applied so that the call site is decoupled from the `injection`
+
+No interface is passed to the constructor.
 ====================================== *)
 
 #load "../Common.fsx"

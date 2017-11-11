@@ -7,7 +7,12 @@ Related blog post: http://fsharpforfunandprofit.com/posts/13-ways-of-looking-at-
 
 Way 11: Functional Retroactive Programming -- Business logic is based on reacting to earlier events
 
-In this design, the \
+In this design, the `write-side` follows the same pattern as the event-sourcing example.
+A client sends a Command to a CommandHandler, which converts that to a list of events and stores them in an EventStore.
+
+However in this design, the CommandHandler only updates state and does NOT do any complex business logic.
+
+The domain logic is done on the \
 ====================================== *)
 
 #load "../Common.fsx"

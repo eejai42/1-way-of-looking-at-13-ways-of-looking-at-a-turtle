@@ -72,10 +72,8 @@ module FPTurtleClient =
 // FP Turtle tests
 // ======================================
 
-(*
 FPTurtleClient.drawTriangle() |> ignore
 FPTurtleClient.drawThreeLines() |> ignore
 FPTurtleClient.drawPolygon 4 |> ignore
-*)
 
 

@@ -86,11 +86,9 @@ The client injects a specific turtle implementation via the API's constructor.</
     <Name>DependencyInjection_Functions1</Name>
     <Description>Dependency injection using functions (v1: pass in all functions)</Description>
     <Notes>In this design, an API layer communicates via one or more functions that are passed in as parameters to the API call.
-These functions are typically partially applied so that the call site is decoupled from the \</Notes>
-  </WayOfLookingAtATurtle>
-  <WayOfLookingAtATurtle />
-  <WayOfLookingAtATurtle>
-    <WayNumber>No interface is passed to the constructor.</WayNumber>
+These functions are typically partially applied so that the call site is decoupled from the `injection`
+
+No interface is passed to the constructor.</Notes>
   </WayOfLookingAtATurtle>
   <WayOfLookingAtATurtle>
     <WayNumber>W07</WayNumber>
@@ -99,11 +97,9 @@ These functions are typically partially applied so that the call site is decoupl
     <Name>DependencyInjection_Functions2</Name>
     <Description>Dependency injection using functions (v2: pass in a single function)</Description>
     <Notes>In this design, an API layer communicates via one or more functions that are passed in as parameters to the API call.
-These functions are typically partially applied so that the call site is decoupled from the \</Notes>
-  </WayOfLookingAtATurtle>
-  <WayOfLookingAtATurtle />
-  <WayOfLookingAtATurtle>
-    <WayNumber>No interface is passed to the constructor.</WayNumber>
+These functions are typically partially applied so that the call site is decoupled from the `injection`
+
+No interface is passed to the constructor.</Notes>
   </WayOfLookingAtATurtle>
   <WayOfLookingAtATurtle>
     <WayNumber>W08</WayNumber>
@@ -149,20 +145,12 @@ Neither the client nor the command handler needs to track state.  Only the Event
     <MainFileName>11-FRP.fsx</MainFileName>
     <Name>FRP</Name>
     <Description>Functional Retroactive Programming -- Business logic is based on reacting to earlier events</Description>
-    <Notes>In this design, the \</Notes>
-  </WayOfLookingAtATurtle>
-  <WayOfLookingAtATurtle>
-    <WayNumber>A client sends a Command to a CommandHandler</WayNumber>
-    <DisplayWayNumber>which converts that to a list of events and stores them in an EventStore.</DisplayWayNumber>
-  </WayOfLookingAtATurtle>
-  <WayOfLookingAtATurtle />
-  <WayOfLookingAtATurtle>
-    <WayNumber>However in this design</WayNumber>
-    <DisplayWayNumber>the CommandHandler only updates state and does NOT do any complex business logic.</DisplayWayNumber>
-  </WayOfLookingAtATurtle>
-  <WayOfLookingAtATurtle />
-  <WayOfLookingAtATurtle>
-    <WayNumber>The domain logic is done on the \</WayNumber>
+    <Notes>In this design, the `write-side` follows the same pattern as the event-sourcing example.
+A client sends a Command to a CommandHandler, which converts that to a list of events and stores them in an EventStore.
+
+However in this design, the CommandHandler only updates state and does NOT do any complex business logic.
+
+The domain logic is done on the \</Notes>
   </WayOfLookingAtATurtle>
   <WayOfLookingAtATurtle>
     <WayNumber>W12</WayNumber>
@@ -274,24 +262,30 @@ More on capability-based security at http://fsharpforfunandprofit.com/posts/capa
     <Name>Move</Name>
     <Description>Move a distance</Description>
     <Parameter>Distance</Parameter>
+    <Version>1</Version>
   </TurtleCommand>
   <TurtleCommand>
     <Name>Turn</Name>
     <Parameter>Degrees</Parameter>
+    <Version>1</Version>
   </TurtleCommand>
   <TurtleCommand>
     <Name>PenUp</Name>
+    <Version>1</Version>
   </TurtleCommand>
   <TurtleCommand>
     <Name>PenDown</Name>
+    <Version>1</Version>
   </TurtleCommand>
   <TurtleCommand>
     <Name>SetColor</Name>
     <Parameter>Color</Parameter>
+    <Version>1</Version>
   </TurtleCommand>
   <TurtleCommand>
     <Name>DrawPolygon</Name>
     <Parameter>Sides</Parameter>
+    <Version>2</Version>
   </TurtleCommand>
 </TurtleCommands><PredifinedScripts>
   <PredifinedScript>

@@ -20,35 +20,34 @@
                         <xsl:text>../W11Base.fsx</xsl:text>
                     </RelativePath>
                     <xsl:element name="FileContents" xml:space="preserve">(* ======================================
-01-OOTurtle.fsx
+11-FRP.fsx
 
 Part of "Thirteen ways of looking at a turtle"
 Related blog post: http://fsharpforfunandprofit.com/posts/13-ways-of-looking-at-a-turtle/
 ======================================
 
-W11: Functional Retroactive Programming -- Business logic is based on reacting to earlier events
+Way 11: Functional Retroactive Programming -- Business logic is based on reacting to earlier events
 
 In this design, the \
 ====================================== *)
 
 #load "../Common.fsx"
 
-open System
 open Common
 
 // ======================================
-// OO Turtle
+// FP Turtle
 // ======================================
 
 // see code in this file
-#load "../OOTurtleLib.fsx"
+#load "../FPTurtleLib.fsx"
+open FPTurtleLib
 
 // ======================================
-// OO Turtle Client
+// Way 11 Helper Classes
 // ======================================
 
 module W11Base = 
-    open OOTurtleLib
 
     /// Function to log a message
     let log message =
@@ -58,10 +57,10 @@ module W11Base =
     <xsl:variable name="pds-name" select="Name" />
     let draw<xsl:value-of select="$pds-name" />() = 
         printfn "PRINTING <xsl:value-of select="$pds-name" />!"
-        let turtle = Turtle(log)
+        // let turtle = Turtle(log)
         <xsl:for-each select="//PredifinedScriptStep[normalize-space(PredefinedScript) = $pds-name]"><xsl:if test="normalize-space(Description) != ''">
         // <xsl:value-of select="Description" /></xsl:if><xsl:text>
-        turtle.</xsl:text><xsl:value-of select="Command" /> <xsl:value-of select="Argument" /><xsl:choose>
+        // turtle.</xsl:text><xsl:value-of select="Command" /> <xsl:value-of select="Argument" /><xsl:choose>
             <xsl:when test="ArgumentType = 'Degrees'">.0&lt;Degrees></xsl:when>
             <xsl:when test="ArgumentType = 'Distance'">.0</xsl:when>
             <xsl:when test="normalize-space(ArgumentType) = ''">()</xsl:when>

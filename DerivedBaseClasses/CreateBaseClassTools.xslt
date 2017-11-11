@@ -20,6 +20,7 @@
                     <RelativePath>
                         <xsl:value-of select="WayNumber" /><xsl:text>/CreateBaseClass.xslt</xsl:text>
                     </RelativePath>
+                    <OverwriteMode>Never</OverwriteMode>
                     <xsl:element name="FileContents" xml:space="preserve">&lt;?xml version="1.0" encoding="utf-8"?>
 &lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl"
@@ -42,20 +43,19 @@
                         &lt;xsl:text>../<xsl:value-of select="WayNumber" />Base.fsx&lt;/xsl:text>
                     &lt;/RelativePath>
                     &lt;xsl:element name="FileContents" xml:space="preserve">(* ======================================
-01-OOTurtle.fsx
+<xsl:value-of select="MainFileName"/>
 
 Part of "Thirteen ways of looking at a turtle"
 Related blog post: http://fsharpforfunandprofit.com/posts/13-ways-of-looking-at-a-turtle/
 ======================================
 
-<xsl:value-of select="WayNumber"/>: <xsl:value-of select="Description" />
+<xsl:value-of select="DisplayWayNumber"/>: <xsl:value-of select="Description" />
 
 <xsl:value-of select="Notes" />
 ====================================== *)
 
 #load "../Common.fsx"
 
-open System
 open Common
 
 // ======================================
@@ -67,11 +67,10 @@ open Common
 open FPTurtleLib
 
 // ======================================
-// Helper Classes
+// <xsl:value-of select="DisplayWayNumber"/> Helper Classes
 // ======================================
 
 module <xsl:value-of select="WayNumber" />Base = 
-    open OOTurtleLib
 
     /// Function to log a message
     let log message =
@@ -81,10 +80,10 @@ module <xsl:value-of select="WayNumber" />Base =
     &lt;xsl:variable name="pds-name" select="Name" />
     let draw&lt;xsl:value-of select="$pds-name" />() = 
         printfn "PRINTING &lt;xsl:value-of select="$pds-name" />!"
-        let turtle = Turtle(log)
+        // let turtle = Turtle(log)
         &lt;xsl:for-each select="//PredifinedScriptStep[normalize-space(PredefinedScript) = $pds-name]">&lt;xsl:if test="normalize-space(Description) != ''">
         // &lt;xsl:value-of select="Description" />&lt;/xsl:if>&lt;xsl:text>
-        turtle.&lt;/xsl:text>&lt;xsl:value-of select="Command" /> &lt;xsl:value-of select="Argument" />&lt;xsl:choose>
+        // turtle.&lt;/xsl:text>&lt;xsl:value-of select="Command" /> &lt;xsl:value-of select="Argument" />&lt;xsl:choose>
             &lt;xsl:when test="ArgumentType = 'Degrees'">.0&amp;lt;Degrees>&lt;/xsl:when>
             &lt;xsl:when test="ArgumentType = 'Distance'">.0&lt;/xsl:when>
             &lt;xsl:when test="normalize-space(ArgumentType) = ''">()&lt;/xsl:when>

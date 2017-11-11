@@ -1,6 +1,8 @@
 <twolaat><WayOfLookingAtATurtles>
   <WayOfLookingAtATurtle>
     <WayNumber>W01</WayNumber>
+    <DisplayWayNumber>Way 01</DisplayWayNumber>
+    <MainFileName>01-OOTurtle.fsx</MainFileName>
     <Name>OOTurtle</Name>
     <Description>Simple OO -- a class with mutable state</Description>
     <Notes>In this design, a simple OO class represents the turtle,
@@ -8,6 +10,8 @@ and the client talks to the turtle directly.</Notes>
   </WayOfLookingAtATurtle>
   <WayOfLookingAtATurtle>
     <WayNumber>W02</WayNumber>
+    <DisplayWayNumber>Way 02</DisplayWayNumber>
+    <MainFileName>02-FPTurtle.fsx</MainFileName>
     <Name>FPTurtle</Name>
     <Description>Simple FP - a module of functions with immutable state</Description>
     <Notes>In this design, the turtle state is immutable. A module contains functions that return a new turtle state,
@@ -17,6 +21,8 @@ The client must keep track of the current state and pass it into the next functi
   </WayOfLookingAtATurtle>
   <WayOfLookingAtATurtle>
     <WayNumber>W03</WayNumber>
+    <DisplayWayNumber>Way 03</DisplayWayNumber>
+    <MainFileName>03-Api_OO_Core.fsx</MainFileName>
     <Name>Api_OO_Core</Name>
     <Description>API (OO Approach) -- OO API calling stateful core class</Description>
     <Notes>In this design, an API layer communicates with a turtle class
@@ -27,6 +33,8 @@ input and returns a Result containing any errors.</Notes>
   </WayOfLookingAtATurtle>
   <WayOfLookingAtATurtle>
     <WayNumber>W04</WayNumber>
+    <DisplayWayNumber>Way 04</DisplayWayNumber>
+    <MainFileName>04-Api_FP_Core.fsx</MainFileName>
     <Name>Api_FP_Core</Name>
     <Description>API (OO/FP hybrid approach) -- OO API calling stateless functions</Description>
     <Notes>In this design, an API layer communicates with pure turtle functions
@@ -38,6 +46,8 @@ The API layer manages the state (rather than the client) by storing a mutable tu
   </WayOfLookingAtATurtle>
   <WayOfLookingAtATurtle>
     <WayNumber>W05</WayNumber>
+    <DisplayWayNumber>Way 05</DisplayWayNumber>
+    <MainFileName>05-TurtleAgent.fsx</MainFileName>
     <Name>TurtleAgent</Name>
     <Description>API (hybrid approach) -- OO API posting messages to an Agent</Description>
     <Notes>In this design, an API layer communicates with a TurtleAgent
@@ -51,6 +61,8 @@ storing the current state as a parameter in the recursive message processing loo
   </WayOfLookingAtATurtle>
   <WayOfLookingAtATurtle>
     <WayNumber>W06</WayNumber>
+    <DisplayWayNumber>Way 06</DisplayWayNumber>
+    <MainFileName>06-DependencyInjection_Interface-1.fsx</MainFileName>
     <Name>DependencyInjection_Interface1</Name>
     <Description>Dependency injection (using interfaces) -- v1: OO interface</Description>
     <Notes>In this design, an API layer communicates with a Turtle Interface (OO style) or a record of TurtleFunctions (FP style)
@@ -59,6 +71,8 @@ The client injects a specific turtle implementation via the API's constructor.</
   </WayOfLookingAtATurtle>
   <WayOfLookingAtATurtle>
     <WayNumber>W06</WayNumber>
+    <DisplayWayNumber>Way 06</DisplayWayNumber>
+    <MainFileName>06-DependencyInjection_Interface-2.fsx</MainFileName>
     <Name>DependencyInjection_Interface2</Name>
     <Description>Dependency injection (using interfaces) - v2: records of functions</Description>
     <Notes>In this design, an API layer communicates with a Turtle Interface (OO style) or a record of TurtleFunctions (FP style)
@@ -67,6 +81,8 @@ The client injects a specific turtle implementation via the API's constructor.</
   </WayOfLookingAtATurtle>
   <WayOfLookingAtATurtle>
     <WayNumber>W07</WayNumber>
+    <DisplayWayNumber>Way 07</DisplayWayNumber>
+    <MainFileName>07-DependencyInjection_Functions-1.fsx</MainFileName>
     <Name>DependencyInjection_Functions1</Name>
     <Description>Dependency injection using functions (v1: pass in all functions)</Description>
     <Notes>In this design, an API layer communicates via one or more functions that are passed in as parameters to the API call.
@@ -78,6 +94,8 @@ These functions are typically partially applied so that the call site is decoupl
   </WayOfLookingAtATurtle>
   <WayOfLookingAtATurtle>
     <WayNumber>W07</WayNumber>
+    <DisplayWayNumber>Way 07</DisplayWayNumber>
+    <MainFileName>07-DependencyInjection_Functions-2.fsx</MainFileName>
     <Name>DependencyInjection_Functions2</Name>
     <Description>Dependency injection using functions (v2: pass in a single function)</Description>
     <Notes>In this design, an API layer communicates via one or more functions that are passed in as parameters to the API call.
@@ -89,6 +107,8 @@ These functions are typically partially applied so that the call site is decoupl
   </WayOfLookingAtATurtle>
   <WayOfLookingAtATurtle>
     <WayNumber>W08</WayNumber>
+    <DisplayWayNumber>Way 08</DisplayWayNumber>
+    <MainFileName>08-StateMonad.fsx</MainFileName>
     <Name>StateMonad</Name>
     <Description>Batch oriented -- Using a state monad (computation expression)</Description>
     <Notes>In this design, the client uses the FP Turtle functions directly.
@@ -100,6 +120,8 @@ As a result, there are no mutables anywhere.</Notes>
   </WayOfLookingAtATurtle>
   <WayOfLookingAtATurtle>
     <WayNumber>W09</WayNumber>
+    <DisplayWayNumber>Way 09</DisplayWayNumber>
+    <MainFileName>09-BatchCommands.fsx</MainFileName>
     <Name>BatchCommands</Name>
     <Description>Batch oriented -- Using a list of commands</Description>
     <Notes>In this design, the client creates a list of `Command`s that will be intepreted later.
@@ -109,6 +131,8 @@ This approach means that there is no state that needs to be persisted between ca
   </WayOfLookingAtATurtle>
   <WayOfLookingAtATurtle>
     <WayNumber>W10</WayNumber>
+    <DisplayWayNumber>Way 10</DisplayWayNumber>
+    <MainFileName>10-EventSourcing.fsx</MainFileName>
     <Name>EventSourcing</Name>
     <Description>Event sourcing -- Building state from a list of past events</Description>
     <Notes>In this design, the client sends a `Command` to a `CommandHandler`.
@@ -121,18 +145,20 @@ Neither the client nor the command handler needs to track state.  Only the Event
   </WayOfLookingAtATurtle>
   <WayOfLookingAtATurtle>
     <WayNumber>W11</WayNumber>
+    <DisplayWayNumber>Way 11</DisplayWayNumber>
+    <MainFileName>11-FRP.fsx</MainFileName>
     <Name>FRP</Name>
     <Description>Functional Retroactive Programming -- Business logic is based on reacting to earlier events</Description>
     <Notes>In this design, the \</Notes>
   </WayOfLookingAtATurtle>
   <WayOfLookingAtATurtle>
     <WayNumber>A client sends a Command to a CommandHandler</WayNumber>
-    <Name>which converts that to a list of events and stores them in an EventStore.</Name>
+    <DisplayWayNumber>which converts that to a list of events and stores them in an EventStore.</DisplayWayNumber>
   </WayOfLookingAtATurtle>
   <WayOfLookingAtATurtle />
   <WayOfLookingAtATurtle>
     <WayNumber>However in this design</WayNumber>
-    <Name>the CommandHandler only updates state and does NOT do any complex business logic.</Name>
+    <DisplayWayNumber>the CommandHandler only updates state and does NOT do any complex business logic.</DisplayWayNumber>
   </WayOfLookingAtATurtle>
   <WayOfLookingAtATurtle />
   <WayOfLookingAtATurtle>
@@ -140,6 +166,8 @@ Neither the client nor the command handler needs to track state.  Only the Event
   </WayOfLookingAtATurtle>
   <WayOfLookingAtATurtle>
     <WayNumber>W12</WayNumber>
+    <DisplayWayNumber>Way 12</DisplayWayNumber>
+    <MainFileName>12-BranchingOnResponse.fsx</MainFileName>
     <Name>BranchingOnResponse</Name>
     <Description>Monadic control flow -- Making decisions in the turtle computation expression</Description>
     <Notes>In this design, the turtle can reply to certain commands with errors.
@@ -149,6 +177,8 @@ while the state is being passed around behind the scenes.</Notes>
   </WayOfLookingAtATurtle>
   <WayOfLookingAtATurtle>
     <WayNumber>W13</WayNumber>
+    <DisplayWayNumber>Way 13</DisplayWayNumber>
+    <MainFileName>13-Interpreter-v1.fsx</MainFileName>
     <Name>InterpreterV1</Name>
     <Description>The interpreter pattern</Description>
     <Notes>In this design, the client builds a data structure (`TurtleProgram`) that represents the instructions.
@@ -157,6 +187,8 @@ This Turtle Program can then interpreted later in various ways</Notes>
   </WayOfLookingAtATurtle>
   <WayOfLookingAtATurtle>
     <WayNumber>W13</WayNumber>
+    <DisplayWayNumber>Way 13</DisplayWayNumber>
+    <MainFileName>13-Interpreter-v2.fsx</MainFileName>
     <Name>InterpreterV2</Name>
     <Description>The interpreter pattern</Description>
     <Notes>In this design, the client builds a data structure (`TurtleProgram`) that represents the instructions.
@@ -165,6 +197,8 @@ This Turtle Program can then interpreted later in various ways</Notes>
   </WayOfLookingAtATurtle>
   <WayOfLookingAtATurtle>
     <WayNumber>W14</WayNumber>
+    <DisplayWayNumber>Way 14</DisplayWayNumber>
+    <MainFileName>14-AdtTurtle.fsx</MainFileName>
     <Name>AdtTurtle</Name>
     <Description>Abstract Data Turtle - a private type with an associated module of functions</Description>
     <Notes>In this design, the details of the turtle structure is hidden from the client,
@@ -175,6 +209,8 @@ for more on ADTs in F#.</Notes>
   </WayOfLookingAtATurtle>
   <WayOfLookingAtATurtle>
     <WayNumber>W15</WayNumber>
+    <DisplayWayNumber>Way 15</DisplayWayNumber>
+    <MainFileName>15-CapabilityBasedTurtle.fsx</MainFileName>
     <Name>CapabilityBasedTurtle</Name>
     <Description>API with capabilities</Description>
     <Notes>In this design, the turtle exposes a list of functions (capabilities) after each action.

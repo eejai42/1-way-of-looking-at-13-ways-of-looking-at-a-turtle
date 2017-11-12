@@ -31,62 +31,78 @@ namespace CSharpLib1.BaseClasses
         public override void drawTriangle()
         {
             this.log("PRINTING Triangle!");
-            var turtle = new Turtle(log);
+            var api = new ApiTurtle(log);
 
             
-            turtle.Move(100);
-            turtle.Turn(120);
-            turtle.Move(100);
-            turtle.Turn(120);
-            turtle.Move(100);
-            turtle.Turn(120);
+            api.Exec("Move 100");
+            api.Exec("Turn 120");
+            api.Exec("Move 100");
+            api.Exec("Turn 120");
+            api.Exec("Move 100");
+            api.Exec("Turn 120");
         }
         
         public override void drawThreeLines()
         {
             this.log("PRINTING ThreeLines!");
-            var turtle = new Turtle(log);
+            var api = new ApiTurtle(log);
 
             
             // Draw black line
-            turtle.PenDown();
-            turtle.SetColor(PenColor.Black);
-            turtle.Move(100);
+            api.Exec("PenDown ");
+            api.Exec("SetColor Black");
+            api.Exec("Move 100");
             // Move without Drawing
-            turtle.PenUp();
-            turtle.Turn(90);
-            turtle.Move(100);
-            turtle.Turn(90);
+            api.Exec("PenUp ");
+            api.Exec("Turn 90");
+            api.Exec("Move 100");
+            api.Exec("Turn 90");
             // Draw red line
-            turtle.PenDown();
-            turtle.SetColor(PenColor.Red);
-            turtle.Move(100);
+            api.Exec("PenDown ");
+            api.Exec("SetColor Red");
+            api.Exec("Move 100");
             // Move without Drawing
-            turtle.PenUp();
-            turtle.Turn(90);
-            turtle.Move(100);
-            turtle.Turn(90);
+            api.Exec("PenUp ");
+            api.Exec("Turn 90");
+            api.Exec("Move 100");
+            api.Exec("Turn 90");
             // Back home at (0,0) with angle 0, Draw diagonal blue line
-            turtle.PenDown();
-            turtle.SetColor(PenColor.Blue);
-            turtle.Turn(45);
-            turtle.Move(100);
+            api.Exec("PenDown ");
+            api.Exec("SetColor Blue");
+            api.Exec("Turn 45");
+            api.Exec("Move 100");
         }
         
         public void drawBox()
         {
             this.log("PRINTING Box!");
-            var turtle = new Turtle(log);
+            var api = new ApiTurtle(log);
 
             
-            turtle.Move(100);
-            turtle.Turn(90);
-            turtle.Move(100);
-            turtle.Turn(90);
-            turtle.Move(100);
-            turtle.Turn(90);
-            turtle.Move(100);
-            turtle.Turn(90);
+            api.Exec("Move 100");
+            api.Exec("Turn 90");
+            api.Exec("Move 100");
+            api.Exec("Turn 90");
+            api.Exec("Move 100");
+            api.Exec("Turn 90");
+            api.Exec("Move 100");
+            api.Exec("Turn 90");
+        }
+    }
+
+    
+    internal class ApiTurtle
+    {
+        private Action<string, object[]> log;
+
+        public ApiTurtle(Action<string, object[]> log)
+        {
+            this.log = log;
+        }
+
+        internal void Exec(string command)
+        {
+            throw new NotImplementedException();
         }
     }
 }

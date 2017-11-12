@@ -78,6 +78,11 @@ public class Turtle
         throw new NotImplementedException();
     }
 
+    internal void DrawCircle(float radius)
+    {
+        throw new NotImplementedException();
+    }
+
     public void SetColor(PenColor color)
     {
         log("SetColor {0}", color);

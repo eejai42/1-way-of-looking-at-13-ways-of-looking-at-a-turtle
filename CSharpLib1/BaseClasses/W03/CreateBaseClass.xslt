@@ -52,12 +52,28 @@ namespace CSharpLib1.BaseClasses
         public<xsl:if test="Version = 1"> override</xsl:if> void draw<xsl:value-of select="$pds-name" />()
         {
             this.log("PRINTING <xsl:value-of select="$pds-name" />!");
-            var turtle = new Turtle(log);
+            var api = new ApiTurtle(log);
 
             <xsl:for-each select="//PredifinedScriptStep[normalize-space(PredefinedScript) = $pds-name]"><xsl:if test="normalize-space(Description) != ''">
             // <xsl:value-of select="Description" /></xsl:if><xsl:text>
-            turtle.</xsl:text><xsl:value-of select="Command" />(<xsl:if test="ArgumentType = 'Color'">PenColor.</xsl:if><xsl:value-of select="Argument" />);</xsl:for-each>
+            api.Exec("</xsl:text><xsl:value-of select="Command" /> <xsl:value-of select="Argument" />");</xsl:for-each>
         }</xsl:for-each>
+    }
+
+    
+    internal class ApiTurtle
+    {
+        private Action&lt;string, object[]> log;
+
+        public ApiTurtle(Action&lt;string, object[]> log)
+        {
+            this.log = log;
+        }
+
+        internal void Exec(string command)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

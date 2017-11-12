@@ -73,6 +73,11 @@ public class Turtle
         currentPenState = PenState.Down;
     }
 
+    internal virtual void DrawPolygon(int sides)
+    {
+        throw new NotImplementedException();
+    }
+
     public void SetColor(PenColor color)
     {
         log("SetColor {0}", color);

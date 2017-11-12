@@ -138,9 +138,22 @@ module W03Base =
         printfn "PRINTING <xsl:value-of select="$pds-name" />!"
         let api = TurtleApi()
 
-        <xsl:for-each select="//PredifinedScriptStep[normalize-space(PredefinedScript) = $pds-name]"><xsl:if test="normalize-space(Description) != ''">
-        // <xsl:value-of select="Description" /></xsl:if><xsl:text>
-        api.Exec "</xsl:text><xsl:value-of select="Command" /> <xsl:value-of select="Argument" />"</xsl:for-each>
+        <xsl:for-each select="//PredifinedScriptStep[normalize-space(PredefinedScript) = $pds-name]" xml:space="default">
+            <xsl:variable name="command" select="//TurtleCommand[Name = current()/Command]" />
+            <xsl:if test="normalize-space(Description) != ''">
+            <xsl:text>
+        // </xsl:text>
+        <xsl:value-of select="Description" />
+        </xsl:if><xsl:text>
+        api.Exec "</xsl:text>
+        <xsl:value-of select="$command/APIName" />&#32;<xsl:choose>
+            <xsl:when test="normalize-space($command/APIArgument) != ''">
+                <xsl:value-of select="$command/APIArgument" />
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="Argument" />
+            </xsl:otherwise>
+        </xsl:choose>"</xsl:for-each>
     </xsl:for-each>
     
 

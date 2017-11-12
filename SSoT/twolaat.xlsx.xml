@@ -263,29 +263,37 @@ More on capability-based security at http://fsharpforfunandprofit.com/posts/capa
     <Description>Move a distance</Description>
     <Parameter>Distance</Parameter>
     <Version>1</Version>
+    <APIName>Move</APIName>
   </TurtleCommand>
   <TurtleCommand>
     <Name>Turn</Name>
     <Parameter>Degrees</Parameter>
     <Version>1</Version>
+    <APIName>Turn</APIName>
   </TurtleCommand>
   <TurtleCommand>
     <Name>PenUp</Name>
     <Version>1</Version>
+    <APIName>Pen</APIName>
+    <APIArgument>Up</APIArgument>
   </TurtleCommand>
   <TurtleCommand>
     <Name>PenDown</Name>
     <Version>1</Version>
+    <APIName>Pen</APIName>
+    <APIArgument>Down</APIArgument>
   </TurtleCommand>
   <TurtleCommand>
     <Name>SetColor</Name>
     <Parameter>Color</Parameter>
     <Version>1</Version>
+    <APIName>SetColor</APIName>
   </TurtleCommand>
   <TurtleCommand>
     <Name>DrawPolygon</Name>
     <Parameter>Sides</Parameter>
     <Version>2</Version>
+    <APIName>DrawPolygon</APIName>
   </TurtleCommand>
 </TurtleCommands><PredifinedScripts>
   <PredifinedScript>
@@ -347,6 +355,7 @@ More on capability-based security at http://fsharpforfunandprofit.com/posts/capa
     <PredefinedScript>ThreeLines</PredefinedScript>
     <Command>PenDown</Command>
     <Description>Draw black line</Description>
+    <PredifinedScriptSteps_x0023_csv_x0023_NoName>Pen</PredifinedScriptSteps_x0023_csv_x0023_NoName>
   </PredifinedScriptStep>
   <PredifinedScriptStep>
     <PredefinedScript>ThreeLines</PredefinedScript>

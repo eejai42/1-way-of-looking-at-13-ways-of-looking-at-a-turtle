@@ -132,25 +132,25 @@ module W03Base =
 
         
         // Draw black line
-        api.Exec "PenDown "
+        api.Exec "Pen Down"
         api.Exec "SetColor Black"
         api.Exec "Move 100"
         // Move without Drawing
-        api.Exec "PenUp "
+        api.Exec "Pen Up"
         api.Exec "Turn 90"
         api.Exec "Move 100"
         api.Exec "Turn 90"
         // Draw red line
-        api.Exec "PenDown "
+        api.Exec "Pen Down"
         api.Exec "SetColor Red"
         api.Exec "Move 100"
         // Move without Drawing
-        api.Exec "PenUp "
+        api.Exec "Pen Up"
         api.Exec "Turn 90"
         api.Exec "Move 100"
         api.Exec "Turn 90"
         // Back home at (0,0) with angle 0, Draw diagonal blue line
-        api.Exec "PenDown "
+        api.Exec "Pen Down"
         api.Exec "SetColor Blue"
         api.Exec "Turn 45"
         api.Exec "Move 100"

@@ -48,7 +48,7 @@ namespace CSharpLib1.BaseClasses
     // ======================================
     public abstract class W04Api_FP_CoreBase : TurtleBase
     {
-        <xsl:for-each select="//PredefinedScript">
+        <xsl:for-each select="//PredefinedScripts/PredefinedScript">
         <xsl:variable name="pds-name" select="Name" />
         public<xsl:if test="Version = 1"> override</xsl:if> void draw<xsl:value-of select="$pds-name" />()
         {
@@ -102,7 +102,7 @@ namespace CSharpLib1
     // ======================================
    public abstract class W03Api_OO_CoreBase : TurtleBase
     {
-        <xsl:for-each select="//PredefinedScript">
+        <xsl:for-each select="//PredefinedScripts/PredefinedScript">
         <xsl:variable name="pds-name" select="Name" />
         public<xsl:if test="Version = 1"> override</xsl:if> void draw<xsl:value-of select="$pds-name" />()
         {

@@ -83,10 +83,10 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PredifinedScripts">
+        <xs:element name="PredefinedScripts">
           <xs:complexType>
             <xs:sequence>
-              <xs:element maxOccurs="unbounded" name="PredifinedScript">
+              <xs:element maxOccurs="unbounded" name="PredefinedScript">
                 <xs:complexType>
                   <xs:sequence>
                     <xs:element name="Name" type="xs:string" />
@@ -100,16 +100,16 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PredifinedScriptSteps">
+        <xs:element name="PredefinedScriptSteps">
           <xs:complexType>
             <xs:sequence>
-              <xs:element maxOccurs="unbounded" name="PredifinedScriptStep">
+              <xs:element maxOccurs="unbounded" name="PredefinedScriptStep">
                 <xs:complexType>
                   <xs:sequence>
                     <xs:element name="PredefinedScript" type="xs:string" />
                     <xs:element name="Command" type="xs:string" />
                     <xs:element minOccurs="0" name="Description" type="xs:string" />
-                    <xs:element minOccurs="0" name="PredifinedScriptSteps_x0023_csv_x0023_NoName" type="xs:string" />
+                    <xs:element minOccurs="0" name="PredefinedScriptSteps_x0023_csv_x0023_NoName" type="xs:string" />
                     <xs:element minOccurs="0" name="Argument" type="xs:string" />
                     <xs:element minOccurs="0" name="ArgumentType" type="xs:string" />
                   </xs:sequence>

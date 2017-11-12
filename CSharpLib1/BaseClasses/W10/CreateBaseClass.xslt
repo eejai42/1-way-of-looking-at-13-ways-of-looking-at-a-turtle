@@ -49,7 +49,7 @@ namespace CSharpLib1.BaseClasses
     // ======================================
     public abstract class W10EventSourcingBase : TurtleBase
     {
-        <xsl:for-each select="//PredefinedScript">
+        <xsl:for-each select="//PredefinedScripts/PredefinedScript">
         <xsl:variable name="pds-name" select="Name" />
         public<xsl:if test="Version = 1"> override</xsl:if> void draw<xsl:value-of select="$pds-name" />()
         {

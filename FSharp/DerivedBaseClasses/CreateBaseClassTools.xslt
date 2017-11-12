@@ -76,7 +76,7 @@ module <xsl:value-of select="WayNumber" />Base =
     let log message =
         printfn "%s" message 
 
-    &lt;xsl:for-each select="//PredefinedScript">
+    &lt;xsl:for-each select="//PredefinedScripts/PredefinedScript">
     &lt;xsl:variable name="pds-name" select="Name" />
     let draw&lt;xsl:value-of select="$pds-name" />() = 
         printfn "PRINTING &lt;xsl:value-of select="$pds-name" />!"

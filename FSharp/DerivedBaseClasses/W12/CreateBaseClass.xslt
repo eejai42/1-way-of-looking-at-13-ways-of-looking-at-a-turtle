@@ -56,7 +56,7 @@ module W12Base =
     let log message =
         printfn "%s" message 
 
-    <xsl:for-each select="//PredefinedScript">
+    <xsl:for-each select="//PredefinedScripts/PredefinedScript">
     <xsl:variable name="pds-name" select="Name" />
     let draw<xsl:value-of select="$pds-name" />() = 
         printfn "PRINTING <xsl:value-of select="$pds-name" />!"

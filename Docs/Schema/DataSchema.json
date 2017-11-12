@@ -532,12 +532,12 @@
               }
             },
             {
-              "Name": "PredifinedScripts",
+              "Name": "PredefinedScripts",
               "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema",
               "PropertyDefs": {
                 "PropertyDef": [
                   {
-                    "Name": "__PredifinedScriptsId",
+                    "Name": "__PredefinedScriptsId",
                     "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
                     "DefaultValue": "(newid()))",
                     "DataType": "GUID",
@@ -563,12 +563,12 @@
               }
             },
             {
-              "Name": "PredifinedScript",
+              "Name": "PredefinedScript",
               "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema",
               "PropertyDefs": {
                 "PropertyDef": [
                   {
-                    "Name": "__PredifinedScriptId",
+                    "Name": "__PredefinedScriptId",
                     "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
                     "DefaultValue": "(newid()))",
                     "DataType": "GUID",
@@ -626,7 +626,7 @@
                     "IsCollection": "0"
                   },
                   {
-                    "Name": "__PredifinedScripts",
+                    "Name": "__PredefinedScripts",
                     "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
                     "DataType": "GUID",
                     "IsNullable": "1",
@@ -634,9 +634,9 @@
                     "IsCollection": "1",
                     "Relationships": {
                       "Relationship": {
-                        "KeyName": "FK_PredifinedScripts___PredifinedScriptsId",
-                        "ReferencedObjectDef": "PredifinedScripts",
-                        "ReferencedPropertyDef": "__PredifinedScriptsId"
+                        "KeyName": "FK_PredefinedScripts___PredefinedScriptsId",
+                        "ReferencedObjectDef": "PredefinedScripts",
+                        "ReferencedPropertyDef": "__PredefinedScriptsId"
                       }
                     }
                   }
@@ -644,12 +644,12 @@
               }
             },
             {
-              "Name": "PredifinedScriptSteps",
+              "Name": "PredefinedScriptSteps",
               "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema",
               "PropertyDefs": {
                 "PropertyDef": [
                   {
-                    "Name": "__PredifinedScriptStepsId",
+                    "Name": "__PredefinedScriptStepsId",
                     "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
                     "DefaultValue": "(newid()))",
                     "DataType": "GUID",
@@ -675,12 +675,12 @@
               }
             },
             {
-              "Name": "PredifinedScriptStep",
+              "Name": "PredefinedScriptStep",
               "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema",
               "PropertyDefs": {
                 "PropertyDef": [
                   {
-                    "Name": "__PredifinedScriptStepId",
+                    "Name": "__PredefinedScriptStepId",
                     "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
                     "DefaultValue": "(newid()))",
                     "DataType": "GUID",
@@ -718,7 +718,7 @@
                     "IsCollection": "0"
                   },
                   {
-                    "Name": "PredifinedScriptSteps_x0023_csv_x0023_NoName",
+                    "Name": "PredefinedScriptSteps_x0023_csv_x0023_NoName",
                     "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
                     "DataType": "TEXT",
                     "Length": "100",
@@ -748,7 +748,7 @@
                     "IsCollection": "0"
                   },
                   {
-                    "Name": "__PredifinedScriptSteps",
+                    "Name": "__PredefinedScriptSteps",
                     "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
                     "DataType": "GUID",
                     "IsNullable": "1",
@@ -756,9 +756,9 @@
                     "IsCollection": "1",
                     "Relationships": {
                       "Relationship": {
-                        "KeyName": "FK_PredifinedScriptSteps___PredifinedScriptStepsId",
-                        "ReferencedObjectDef": "PredifinedScriptSteps",
-                        "ReferencedPropertyDef": "__PredifinedScriptStepsId"
+                        "KeyName": "FK_PredefinedScriptSteps___PredefinedScriptStepsId",
+                        "ReferencedObjectDef": "PredefinedScriptSteps",
+                        "ReferencedPropertyDef": "__PredefinedScriptStepsId"
                       }
                     }
                   }
@@ -828,23 +828,23 @@
             "IsCollection": "1"
           },
           {
-            "ObjectName": "PredifinedScripts",
+            "ObjectName": "PredefinedScripts",
             "ParentObjectName": "twolaat",
             "IsCollection": "0"
           },
           {
-            "ObjectName": "PredifinedScript",
-            "ParentObjectName": "PredifinedScripts",
+            "ObjectName": "PredefinedScript",
+            "ParentObjectName": "PredefinedScripts",
             "IsCollection": "1"
           },
           {
-            "ObjectName": "PredifinedScriptSteps",
+            "ObjectName": "PredefinedScriptSteps",
             "ParentObjectName": "twolaat",
             "IsCollection": "0"
           },
           {
-            "ObjectName": "PredifinedScriptStep",
-            "ParentObjectName": "PredifinedScriptSteps",
+            "ObjectName": "PredefinedScriptStep",
+            "ParentObjectName": "PredefinedScriptSteps",
             "IsCollection": "1"
           }
         ]
@@ -1012,7 +1012,7 @@
             "IsCollection": "0"
           },
           {
-            "ObjectName": "PredifinedScript",
+            "ObjectName": "PredefinedScript",
             "PropertyName": "Name",
             "DataType": "xs:string",
             "IsAttribute": "0",
@@ -1020,7 +1020,7 @@
             "IsCollection": "0"
           },
           {
-            "ObjectName": "PredifinedScript",
+            "ObjectName": "PredefinedScript",
             "PropertyName": "DisplayName",
             "DataType": "xs:string",
             "IsAttribute": "0",
@@ -1028,7 +1028,7 @@
             "IsCollection": "0"
           },
           {
-            "ObjectName": "PredifinedScript",
+            "ObjectName": "PredefinedScript",
             "PropertyName": "Description",
             "DataType": "xs:string",
             "IsAttribute": "0",
@@ -1036,7 +1036,7 @@
             "IsCollection": "0"
           },
           {
-            "ObjectName": "PredifinedScript",
+            "ObjectName": "PredefinedScript",
             "PropertyName": "IsActive",
             "DataType": "xs:string",
             "IsAttribute": "0",
@@ -1044,7 +1044,7 @@
             "IsCollection": "0"
           },
           {
-            "ObjectName": "PredifinedScript",
+            "ObjectName": "PredefinedScript",
             "PropertyName": "Version",
             "DataType": "xs:unsignedByte",
             "IsAttribute": "0",
@@ -1052,7 +1052,7 @@
             "IsCollection": "0"
           },
           {
-            "ObjectName": "PredifinedScriptStep",
+            "ObjectName": "PredefinedScriptStep",
             "PropertyName": "PredefinedScript",
             "DataType": "xs:string",
             "IsAttribute": "0",
@@ -1060,7 +1060,7 @@
             "IsCollection": "0"
           },
           {
-            "ObjectName": "PredifinedScriptStep",
+            "ObjectName": "PredefinedScriptStep",
             "PropertyName": "Command",
             "DataType": "xs:string",
             "IsAttribute": "0",
@@ -1068,7 +1068,7 @@
             "IsCollection": "0"
           },
           {
-            "ObjectName": "PredifinedScriptStep",
+            "ObjectName": "PredefinedScriptStep",
             "PropertyName": "Description",
             "DataType": "xs:string",
             "IsAttribute": "0",
@@ -1076,15 +1076,15 @@
             "IsCollection": "0"
           },
           {
-            "ObjectName": "PredifinedScriptStep",
-            "PropertyName": "PredifinedScriptSteps_x0023_csv_x0023_NoName",
+            "ObjectName": "PredefinedScriptStep",
+            "PropertyName": "PredefinedScriptSteps_x0023_csv_x0023_NoName",
             "DataType": "xs:string",
             "IsAttribute": "0",
             "IsNullable": "1",
             "IsCollection": "0"
           },
           {
-            "ObjectName": "PredifinedScriptStep",
+            "ObjectName": "PredefinedScriptStep",
             "PropertyName": "Argument",
             "DataType": "xs:string",
             "IsAttribute": "0",
@@ -1092,7 +1092,7 @@
             "IsCollection": "0"
           },
           {
-            "ObjectName": "PredifinedScriptStep",
+            "ObjectName": "PredefinedScriptStep",
             "PropertyName": "ArgumentType",
             "DataType": "xs:string",
             "IsAttribute": "0",

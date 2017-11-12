@@ -66,7 +66,7 @@ namespace CSharpLib1.BaseClasses
     // ======================================
     public abstract class <xsl:value-of select="WayNumber" /><xsl:value-of select="Name"  />Base : TurtleBase
     {
-        &lt;xsl:for-each select="//PredefinedScript">
+        &lt;xsl:for-each select="//PredefinedScripts/PredefinedScript">
         &lt;xsl:variable name="pds-name" select="Name" />
         public&lt;xsl:if test="Version = 1"> override&lt;/xsl:if> void draw&lt;xsl:value-of select="$pds-name" />()
         {

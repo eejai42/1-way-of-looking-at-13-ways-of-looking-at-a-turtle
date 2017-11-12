@@ -262,12 +262,14 @@ More on capability-based security at http://fsharpforfunandprofit.com/posts/capa
     <Name>Move</Name>
     <Description>Move a distance</Description>
     <Parameter>Distance</Parameter>
+    <ParameterType>float</ParameterType>
     <Version>1</Version>
     <APIName>Move</APIName>
   </TurtleCommand>
   <TurtleCommand>
     <Name>Turn</Name>
     <Parameter>Degrees</Parameter>
+    <ParameterType>float</ParameterType>
     <Version>1</Version>
     <APIName>Turn</APIName>
   </TurtleCommand>
@@ -286,12 +288,14 @@ More on capability-based security at http://fsharpforfunandprofit.com/posts/capa
   <TurtleCommand>
     <Name>SetColor</Name>
     <Parameter>Color</Parameter>
+    <ParameterType>PenColor</ParameterType>
     <Version>1</Version>
     <APIName>SetColor</APIName>
   </TurtleCommand>
   <TurtleCommand>
     <Name>DrawPolygon</Name>
     <Parameter>Sides</Parameter>
+    <ParameterType>int</ParameterType>
     <Version>2</Version>
     <APIName>DrawPolygon</APIName>
   </TurtleCommand>

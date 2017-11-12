@@ -38,9 +38,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static CommonExtensions;
 
 namespace CSharpLib1.BaseClasses
 {
+    public static class TurtleExtensions {
+        public static Turtle CreateTurtle(log log) {
+            return new Turtle(log);
+        }
+
+        <xsl:for-each select="//TurtleCommand">
+        public static Turtle Do<xsl:value-of select="Name" />(this Turtle turtle<xsl:if test="normalize-space(Parameter) != ''">, <xsl:value-of select="ParameterType"  />&#32;<xsl:value-of select="Parameter" /></xsl:if>) {
+            turtle.<xsl:value-of select="Name" />(<xsl:if test="normalize-space(Parameter) != ''"><xsl:value-of select="Parameter" /></xsl:if>);
+            return turtle;
+        }
+        </xsl:for-each>
+    }
+
     // ======================================
     // Way 02 Helper Classes
     // ======================================
@@ -51,11 +65,9 @@ namespace CSharpLib1.BaseClasses
         public<xsl:if test="Version = 1"> override</xsl:if> void draw<xsl:value-of select="$pds-name" />()
         {
             this.log("PRINTING <xsl:value-of select="$pds-name" />!");
-            var turtle = new Turtle(log);
-
-            <xsl:for-each select="//PredifinedScriptStep[normalize-space(PredefinedScript) = $pds-name]"><xsl:if test="normalize-space(Description) != ''">
-            // <xsl:value-of select="Description" /></xsl:if><xsl:text>
-            turtle.</xsl:text><xsl:value-of select="Command" />(<xsl:if test="ArgumentType = 'Color'">PenColor.</xsl:if><xsl:value-of select="Argument" />);</xsl:for-each>
+            TurtleExtensions.CreateTurtle(log)<xsl:for-each select="//PredifinedScriptStep[normalize-space(PredefinedScript) = $pds-name]"><xsl:if test="normalize-space(Description) != ''">
+                // <xsl:value-of select="Description" /></xsl:if><xsl:text>
+                .Do</xsl:text><xsl:value-of select="Command" />(<xsl:if test="ArgumentType = 'Color'">PenColor.</xsl:if><xsl:value-of select="Argument" />)</xsl:for-each>;
         }</xsl:for-each>
     }
 }

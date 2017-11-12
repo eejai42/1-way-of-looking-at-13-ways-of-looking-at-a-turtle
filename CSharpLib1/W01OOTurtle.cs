@@ -33,7 +33,6 @@ namespace CSharpLib1
 
         public override void drawPolygon(int n)
         {
-            this.log("DRAWING {0} sided polygon!", n);
             var angle = 180.0 - (360.0 / (float)n);
             var angleDegrees = angle * 1.0f;
             var turtle = new Turtle(log);

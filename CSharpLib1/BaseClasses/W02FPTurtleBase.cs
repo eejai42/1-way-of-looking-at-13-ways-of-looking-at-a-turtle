@@ -21,23 +21,42 @@ using static CommonExtensions;
 
 namespace CSharpLib1.BaseClasses
 {
-
     public static class TurtleExtensions {
         public static Turtle CreateTurtle(log log) {
             return new Turtle(log);
         }
 
-        public static Turtle DoMove(this Turtle turtle, float distance) {
-            turtle.Move(distance);
+        
+        public static Turtle DoMove(this Turtle turtle, float Distance) {
+            turtle.Move(Distance);
             return turtle;
         }
-
-        public static Turtle DoTurn(this Turtle turtle, float angle)
-        {
-            turtle.Turn(angle);
+        
+        public static Turtle DoTurn(this Turtle turtle, float Degrees) {
+            turtle.Turn(Degrees);
             return turtle;
         }
-
+        
+        public static Turtle DoPenUp(this Turtle turtle) {
+            turtle.PenUp();
+            return turtle;
+        }
+        
+        public static Turtle DoPenDown(this Turtle turtle) {
+            turtle.PenDown();
+            return turtle;
+        }
+        
+        public static Turtle DoSetColor(this Turtle turtle, PenColor Color) {
+            turtle.SetColor(Color);
+            return turtle;
+        }
+        
+        public static Turtle DoDrawPolygon(this Turtle turtle, int Sides) {
+            turtle.DrawPolygon(Sides);
+            return turtle;
+        }
+        
     }
 
     // ======================================
@@ -54,54 +73,52 @@ namespace CSharpLib1.BaseClasses
                 .DoMove(100)
                 .DoTurn(120)
                 .DoMove(100)
+                .DoTurn(120)
+                .DoMove(100)
                 .DoTurn(120);
         }
         
         public override void drawThreeLines()
         {
             this.log("PRINTING ThreeLines!");
-            var turtle = new Turtle(log);
-
-            
-            // Draw black line
-            turtle.PenDown();
-            turtle.SetColor(PenColor.Black);
-            turtle.Move(100);
-            // Move without Drawing
-            turtle.PenUp();
-            turtle.Turn(90);
-            turtle.Move(100);
-            turtle.Turn(90);
-            // Draw red line
-            turtle.PenDown();
-            turtle.SetColor(PenColor.Red);
-            turtle.Move(100);
-            // Move without Drawing
-            turtle.PenUp();
-            turtle.Turn(90);
-            turtle.Move(100);
-            turtle.Turn(90);
-            // Back home at (0,0) with angle 0, Draw diagonal blue line
-            turtle.PenDown();
-            turtle.SetColor(PenColor.Blue);
-            turtle.Turn(45);
-            turtle.Move(100);
+            TurtleExtensions.CreateTurtle(log)
+                // Draw black line
+                .DoPenDown()
+                .DoSetColor(PenColor.Black)
+                .DoMove(100)
+                // Move without Drawing
+                .DoPenUp()
+                .DoTurn(90)
+                .DoMove(100)
+                .DoTurn(90)
+                // Draw red line
+                .DoPenDown()
+                .DoSetColor(PenColor.Red)
+                .DoMove(100)
+                // Move without Drawing
+                .DoPenUp()
+                .DoTurn(90)
+                .DoMove(100)
+                .DoTurn(90)
+                // Back home at (0,0) with angle 0, Draw diagonal blue line
+                .DoPenDown()
+                .DoSetColor(PenColor.Blue)
+                .DoTurn(45)
+                .DoMove(100);
         }
         
         public void drawBox()
         {
             this.log("PRINTING Box!");
-            var turtle = new Turtle(log);
-
-            
-            turtle.Move(100);
-            turtle.Turn(90);
-            turtle.Move(100);
-            turtle.Turn(90);
-            turtle.Move(100);
-            turtle.Turn(90);
-            turtle.Move(100);
-            turtle.Turn(90);
+            TurtleExtensions.CreateTurtle(log)
+                .DoMove(100)
+                .DoTurn(90)
+                .DoMove(100)
+                .DoTurn(90)
+                .DoMove(100)
+                .DoTurn(90)
+                .DoMove(100)
+                .DoTurn(90);
         }
     }
 }

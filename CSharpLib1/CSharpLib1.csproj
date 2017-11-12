@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseClasses\TurtleBase.cs" />
+    <Compile Include="BaseClasses\W01OOTurtleBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="W01OOTurtle.cs" />
   </ItemGroup>
@@ -50,6 +52,9 @@
     <None Include="Core\FPTurtleLib2.fsx" />
     <Compile Include="Core\OOTurtleLib.cs" />
     <None Include="Core\TurtleApiHelpers.fsx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BaseClasses\W01\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -11,6 +11,7 @@ In this design, a simple OO class represents the turtle,
 and the client talks to the turtle directly.
 
 ====================================== */
+using CSharpLib1.BaseClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,24 +26,9 @@ namespace CSharpLib1
     // OO Turtle Client
     // ======================================
 
-    public class OOTurtleClient
+    public class OOTurtleClient : W01OOTurtleBase
     {
 
-        public void drawTriangle()
-        {
-            var turtle = new Turtle(log);
-            turtle.Move(100);
-            turtle.Turn(120);
-            turtle.Move(100);
-            turtle.Turn(120);
-            turtle.Move(100);
-            turtle.Turn(120);
-            // back to 0
-        }
-
-        public void drawThreeLines()
-        {
-        }
 
         // define a function that draws one side
         private void drawOneSide(Turtle turtle, float angleDegrees)
@@ -51,13 +37,7 @@ namespace CSharpLib1
             turtle.Turn(angleDegrees);
         }
 
-        public void log(String format, params object[] args)
-        {
-            Console.WriteLine(format, args);
-        }
-
-
-        public void drawPolygon(int n)
+        public override void drawPolygon(int n)
         {
             var angle = 180.0 - (360.0 / (float)n);
             var angleDegrees = angle * 1.0f;
@@ -69,10 +49,5 @@ namespace CSharpLib1
                 this.drawOneSide(turtle, (float)angleDegrees);
         }
 
-        public static void RunTests() {
-            var ooTurtle = new OOTurtleClient();
-            ooTurtle.drawTriangle();
-            ooTurtle.drawThreeLines();
-        }
     }
 }

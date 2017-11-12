@@ -24,7 +24,7 @@ using CSharpLib1.BaseClasses;
 namespace CSharpLib1
 {
     // ======================================
-    // Way 03 Class
+    // Way 04 Class
     // ======================================
     public class Api_FP_Core : W04Api_FP_CoreBase
     {

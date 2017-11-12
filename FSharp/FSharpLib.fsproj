@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>3ded8669-07bb-4e9f-9764-f393d3a5549d</ProjectGuid>
+    <ProjectGuid>{fdf8bed4-07ba-42e7-80ee-f9ccb225fe65}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>13-ways-of-looking-at-a-turtle</RootNamespace>
     <AssemblyName>13-ways-of-looking-at-a-turtle</AssemblyName>

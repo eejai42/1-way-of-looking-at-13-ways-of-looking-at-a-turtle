@@ -61,19 +61,16 @@ namespace CSharpLib1.BaseClasses
     }
 
     
-    internal class ApiTurtle
+    public abstract class ApiTurtleBase
     {
-        private Action&lt;string, object[]> log;
+        public Action&lt;string, object[]> log;
 
-        public ApiTurtle(Action&lt;string, object[]> log)
+        public ApiTurtleBase(Action&lt;string, object[]> log)
         {
             this.log = log;
         }
 
-        internal void Exec(string command)
-        {
-            throw new NotImplementedException();
-        }
+        internal abstract void Exec(string command);
     }
 }
 
@@ -86,7 +83,7 @@ namespace CSharpLib1.BaseClasses
                     <RelativePath>
                         <xsl:text>../../W03Api_OO_Core.cs</xsl:text>
                     </RelativePath>
-                    <OvewriteMode>Never</OvewriteMode>
+                    <OverwriteMode>Never</OverwriteMode>
                     <xsl:element name="FileContents" xml:space="preserve">/* ======================================
 03-Api_OO_Core.fsx
 

@@ -71,7 +71,7 @@ namespace CSharpLib1.BaseClasses
                     <RelativePath>
                         <xsl:text>../../W04Api_FP_Core.cs</xsl:text>
                     </RelativePath>
-                    <OvewriteMode>Never</OvewriteMode>
+                    <OverwriteMode>Never</OverwriteMode>
                     <xsl:element name="FileContents" xml:space="preserve">/* ======================================
 04-Api_FP_Core.fsx
 
@@ -100,29 +100,37 @@ namespace CSharpLib1
     // ======================================
     // Way 04 Class
     // ======================================
-    public class Api_FP_Core : W04Api_FP_CoreBase
+   public abstract class W03Api_OO_CoreBase : TurtleBase
     {
-        // define a function that draws one side
-        private void drawOneSide(Turtle turtle, float angleDegrees)
+        <xsl:for-each select="//PredifinedScript">
+        <xsl:variable name="pds-name" select="Name" />
+        public<xsl:if test="Version = 1"> override</xsl:if> void draw<xsl:value-of select="$pds-name" />()
         {
-            turtle.Move(100);
-            turtle.Turn(angleDegrees);
+            this.log("PRINTING <xsl:value-of select="$pds-name" />!");
+            var api = new ApiTurtle(log);
+
+            <xsl:for-each select="//PredifinedScriptStep[normalize-space(PredefinedScript) = $pds-name]"><xsl:if test="normalize-space(Description) != ''">
+            // <xsl:value-of select="Description" /></xsl:if><xsl:text>
+            api.Exec("</xsl:text><xsl:value-of select="Command" /> <xsl:value-of select="Argument" />");</xsl:for-each>
+        }</xsl:for-each>
+    }
+
+    
+  
+
+    public abstract class ApiTurtleBase
+    {
+        public Action&lt;string, object[]> log;
+
+        public ApiTurtleBase(Action&lt;string, object[]> log)
+        {
+            this.log = log;
         }
 
-        public override void drawPolygon(int n)
-        {
-            var angle = 180.0 - (360.0 / (float)n);
-            var angleDegrees = angle * 1.0f;
-            var turtle = new Turtle(log);
-
-
-            // repeat for all sides
-            for (var i = 0; i &lt; n; i++)
-                this.drawOneSide(turtle, (float)angleDegrees);
-        }
-
+        internal abstract void Exec(string command);
     }
 }
+
 </xsl:element>
                 </FileSetFile>
             </FileSetFiles>

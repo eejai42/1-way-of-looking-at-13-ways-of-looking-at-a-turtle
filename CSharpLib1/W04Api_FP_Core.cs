@@ -1,5 +1,5 @@
 /* ======================================
-04-Api_FP_Core.fsx
+03-Api_OO_Core.fsx
 
 Part of "Thirteen ways of looking at a turtle"
 Related blog post: http://fsharpforfunandprofit.com/posts/13-ways-of-looking-at-a-turtle/
@@ -24,28 +24,41 @@ using CSharpLib1.BaseClasses;
 namespace CSharpLib1
 {
     // ======================================
-    // Way 04 Class
+    // Way 03 Class
     // ======================================
     public class Api_FP_Core : W04Api_FP_CoreBase
     {
         // define a function that draws one side
-        private void drawOneSide(Turtle turtle, float angleDegrees)
+        private void drawOneSide(FPApiTurtle turtle, float angleDegrees)
         {
-            turtle.Move(100);
-            turtle.Turn(angleDegrees);
+            turtle.Exec("Move 100");
+            turtle.Exec(String.Format("Turn {0}", angleDegrees));
         }
 
-        public override void drawPolygon(int n)
+        public override void drawPolygon(int sides)
         {
-            var angle = 180.0 - (360.0 / (float)n);
+            Console.WriteLine("DRAWING POLYGON: {0}", sides);
+            var angle = 180.0 - (360.0 / (float)sides);
             var angleDegrees = angle * 1.0f;
-            var turtle = new Turtle(log);
+            var turtle = new FPApiTurtle(log);
 
 
             // repeat for all sides
-            for (var i = 0; i < n; i++)
+            for (var i = 0; i < sides; i++)
                 this.drawOneSide(turtle, (float)angleDegrees);
         }
 
+    }
+
+    public class FPApiTurtle : ApiTurtleBase
+    {
+        public FPApiTurtle(Action<string, object[]> log) : base(log)
+        {
+        }
+
+        internal override void Exec(string command)
+        {
+            Console.WriteLine("FP EXECUTING: {0}", command);
+        }
     }
 }

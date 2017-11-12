@@ -14,8 +14,12 @@ namespace CSharpConApp1
             //var turtle = OOTurtle.RunTests<OOTurtle>();
             //turtle.drawBox();
 
-            var fpTurtle = FPTurtle.RunTests<FPTurtle>();
-            fpTurtle.drawBox();
+            //var fpTurtle = FPTurtle.RunTests<FPTurtle>();
+            //fpTurtle.drawBox();
+
+
+            var apiTurtle = Api_OO_Core.RunTests<Api_OO_Core>();
+            apiTurtle.drawBox();
 
             Console.ReadKey();
         }

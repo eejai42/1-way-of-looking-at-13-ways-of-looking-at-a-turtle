@@ -26,14 +26,14 @@ namespace CSharpLib1.BaseClasses
     // ======================================
     public abstract class W03Api_OO_CoreBase : TurtleBase
     {
-        
-        
+
+
         public override void drawTriangle()
         {
             this.log("PRINTING Triangle!");
             var api = new ApiTurtle(log);
 
-            
+
             api.Exec("Move 100");
             api.Exec("Turn 120");
             api.Exec("Move 100");
@@ -41,13 +41,13 @@ namespace CSharpLib1.BaseClasses
             api.Exec("Move 100");
             api.Exec("Turn 120");
         }
-        
+
         public override void drawThreeLines()
         {
             this.log("PRINTING ThreeLines!");
             var api = new ApiTurtle(log);
 
-            
+
             // Draw black line
             api.Exec("PenDown ");
             api.Exec("SetColor Black");
@@ -72,13 +72,13 @@ namespace CSharpLib1.BaseClasses
             api.Exec("Turn 45");
             api.Exec("Move 100");
         }
-        
+
         public void drawBox()
         {
             this.log("PRINTING Box!");
             var api = new ApiTurtle(log);
 
-            
+
             api.Exec("Move 100");
             api.Exec("Turn 90");
             api.Exec("Move 100");
@@ -90,23 +90,20 @@ namespace CSharpLib1.BaseClasses
         }
     }
 
-    
-    internal class ApiTurtle
-    {
-        private Action<string, object[]> log;
 
-        public ApiTurtle(Action<string, object[]> log)
+    public abstract class ApiTurtleBase
+    {
+        public Action<string, object[]> log;
+
+        public ApiTurtleBase(Action<string, object[]> log)
         {
             this.log = log;
         }
 
-        internal void Exec(string command)
-        {
-            throw new NotImplementedException();
-        }
+        internal abstract void Exec(string command);
     }
 }
 
 
-    
+
 

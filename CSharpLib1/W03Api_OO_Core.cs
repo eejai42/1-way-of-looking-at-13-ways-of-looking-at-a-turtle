@@ -28,23 +28,36 @@ namespace CSharpLib1
     public class Api_OO_Core : W03Api_OO_CoreBase
     {
         // define a function that draws one side
-        private void drawOneSide(Turtle turtle, float angleDegrees)
+        private void drawOneSide(ApiTurtle turtle, float angleDegrees)
         {
-            turtle.Move(100);
-            turtle.Turn(angleDegrees);
+            turtle.Exec("Move 100");
+            turtle.Exec(String.Format("Turn {0}", angleDegrees));
         }
 
-        public override void drawPolygon(int n)
+        public override void drawPolygon(int sides)
         {
-            var angle = 180.0 - (360.0 / (float)n);
+            Console.WriteLine("DRAWING POLYGON: {0}", sides);
+            var angle = 180.0 - (360.0 / (float)sides);
             var angleDegrees = angle * 1.0f;
-            var turtle = new Turtle(log);
+            var turtle = new ApiTurtle(log);
 
 
             // repeat for all sides
-            for (var i = 0; i < n; i++)
+            for (var i = 0; i < sides; i++)
                 this.drawOneSide(turtle, (float)angleDegrees);
         }
 
+    }
+
+    public class ApiTurtle : ApiTurtleBase
+    {
+        public ApiTurtle(Action<string, object[]> log) : base(log)
+        {
+        }
+
+        internal override void Exec(string command)
+        {
+            Console.WriteLine("EXECUTING: {0}", command);
+        }
     }
 }

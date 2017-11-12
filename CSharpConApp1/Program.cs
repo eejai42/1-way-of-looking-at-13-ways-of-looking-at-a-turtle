@@ -11,7 +11,8 @@ namespace CSharpConApp1
     {
         static void Main(string[] args)
         {
-            OOTurtleClient.RunTests();
+            var turtle = OOTurtle.RunTests<OOTurtle>();
+            turtle.drawBox();
             Console.ReadKey();
         }
     }

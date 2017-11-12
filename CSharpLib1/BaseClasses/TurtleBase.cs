@@ -17,13 +17,14 @@ namespace CSharpLib1.BaseClasses
         public abstract void drawThreeLines();
         public abstract void drawPolygon(int sides);
 
-        public static void RunTests<T>()
+        public static T RunTests<T>()
             where T : TurtleBase, new()
         {
             var ooTurtle = new T();
             ooTurtle.drawTriangle();
             ooTurtle.drawThreeLines();
             ooTurtle.drawPolygon(5);
+            return ooTurtle;
         }
     }
 }

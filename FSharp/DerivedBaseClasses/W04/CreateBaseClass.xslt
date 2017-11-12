@@ -58,12 +58,12 @@ module W04Base =
     let log message =
         printfn "%s" message 
 
-    <xsl:for-each select="//PredifinedScript">
+    <xsl:for-each select="//PredefinedScript">
     <xsl:variable name="pds-name" select="Name" />
     let draw<xsl:value-of select="$pds-name" />() = 
         printfn "PRINTING <xsl:value-of select="$pds-name" />!"
         // let turtle = Turtle(log)
-        <xsl:for-each select="//PredifinedScriptStep[normalize-space(PredefinedScript) = $pds-name]"><xsl:if test="normalize-space(Description) != ''">
+        <xsl:for-each select="//PredefinedScriptStep[normalize-space(PredefinedScript) = $pds-name]"><xsl:if test="normalize-space(Description) != ''">
         // <xsl:value-of select="Description" /></xsl:if><xsl:text>
         // turtle.</xsl:text><xsl:value-of select="Command" /> <xsl:value-of select="Argument" /><xsl:choose>
             <xsl:when test="ArgumentType = 'Degrees'">.0&lt;Degrees></xsl:when>

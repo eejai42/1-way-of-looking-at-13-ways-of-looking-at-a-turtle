@@ -132,13 +132,13 @@ module W03Base =
                 raise (TurtleApiException msg)
 
     
-    <xsl:for-each select="//PredifinedScript">
+    <xsl:for-each select="//PredefinedScript">
     <xsl:variable name="pds-name" select="Name" />
     let draw<xsl:value-of select="$pds-name" />() = 
         printfn "PRINTING <xsl:value-of select="$pds-name" />!"
         let api = TurtleApi()
 
-        <xsl:for-each select="//PredifinedScriptStep[normalize-space(PredefinedScript) = $pds-name]" xml:space="default">
+        <xsl:for-each select="//PredefinedScriptStep[normalize-space(PredefinedScript) = $pds-name]" xml:space="default">
             <xsl:variable name="command" select="//TurtleCommand[Name = current()/Command]" />
             <xsl:if test="normalize-space(Description) != ''">
             <xsl:text>

@@ -66,14 +66,14 @@ namespace CSharpLib1.BaseClasses
     // ======================================
     public abstract class <xsl:value-of select="WayNumber" /><xsl:value-of select="Name"  />Base : TurtleBase
     {
-        &lt;xsl:for-each select="//PredifinedScript">
+        &lt;xsl:for-each select="//PredefinedScript">
         &lt;xsl:variable name="pds-name" select="Name" />
         public&lt;xsl:if test="Version = 1"> override&lt;/xsl:if> void draw&lt;xsl:value-of select="$pds-name" />()
         {
             this.log("PRINTING &lt;xsl:value-of select="$pds-name" />!");
             var turtle = new Turtle(log);
 
-            &lt;xsl:for-each select="//PredifinedScriptStep[normalize-space(PredefinedScript) = $pds-name]">&lt;xsl:if test="normalize-space(Description) != ''">
+            &lt;xsl:for-each select="//PredefinedScriptStep[normalize-space(PredefinedScript) = $pds-name]">&lt;xsl:if test="normalize-space(Description) != ''">
             // &lt;xsl:value-of select="Description" />&lt;/xsl:if>&lt;xsl:text>
             turtle.&lt;/xsl:text>&lt;xsl:value-of select="Command" />(&lt;xsl:if test="ArgumentType = 'Color'">PenColor.&lt;/xsl:if>&lt;xsl:value-of select="Argument" />);&lt;/xsl:for-each>
         }&lt;/xsl:for-each>

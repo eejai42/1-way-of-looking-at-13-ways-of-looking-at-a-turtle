@@ -60,12 +60,12 @@ module W02Base =
     <xsl:for-each select="//TurtleCommand[Version = 1]"><xsl:variable name="lowerName"><xsl:value-of select="substring(translate(Name, $ucletters, $lcletters), 1, 1)"/><xsl:value-of select="substring(Name, 2, string-length(Name))"/></xsl:variable>
     let <xsl:value-of select="$lowerName" /> = Turtle.<xsl:value-of select="$lowerName" /> log</xsl:for-each>
 
-    <xsl:for-each select="//PredifinedScript">
+    <xsl:for-each select="//PredefinedScript">
     <xsl:variable name="pds-name" select="Name" />
     let draw<xsl:value-of select="$pds-name" />() = 
         printfn "PRINTING <xsl:value-of select="$pds-name" />!"
         
-        Turtle.initialTurtleState<xsl:for-each select="//PredifinedScriptStep[normalize-space(PredefinedScript) = $pds-name]"><xsl:if test="normalize-space(Description) != ''">
+        Turtle.initialTurtleState<xsl:for-each select="//PredefinedScriptStep[normalize-space(PredefinedScript) = $pds-name]"><xsl:if test="normalize-space(Description) != ''">
         // <xsl:value-of select="Description" /></xsl:if><xsl:variable name="lowerCommand"><xsl:value-of select="substring(translate(Command, $ucletters, $lcletters), 1, 1)"/><xsl:value-of select="substring(Command, 2, string-length(Command))"/></xsl:variable><xsl:text>
         |> </xsl:text><xsl:value-of select="$lowerCommand" /> <xsl:value-of select="Argument" /><xsl:choose>
             <xsl:when test="ArgumentType = 'Degrees'">.0&lt;Degrees></xsl:when>

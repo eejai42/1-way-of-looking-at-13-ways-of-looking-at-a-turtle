@@ -76,12 +76,12 @@ module <xsl:value-of select="WayNumber" />Base =
     let log message =
         printfn "%s" message 
 
-    &lt;xsl:for-each select="//PredifinedScript">
+    &lt;xsl:for-each select="//PredefinedScript">
     &lt;xsl:variable name="pds-name" select="Name" />
     let draw&lt;xsl:value-of select="$pds-name" />() = 
         printfn "PRINTING &lt;xsl:value-of select="$pds-name" />!"
         // let turtle = Turtle(log)
-        &lt;xsl:for-each select="//PredifinedScriptStep[normalize-space(PredefinedScript) = $pds-name]">&lt;xsl:if test="normalize-space(Description) != ''">
+        &lt;xsl:for-each select="//PredefinedScriptStep[normalize-space(PredefinedScript) = $pds-name]">&lt;xsl:if test="normalize-space(Description) != ''">
         // &lt;xsl:value-of select="Description" />&lt;/xsl:if>&lt;xsl:text>
         // turtle.&lt;/xsl:text>&lt;xsl:value-of select="Command" /> &lt;xsl:value-of select="Argument" />&lt;xsl:choose>
             &lt;xsl:when test="ArgumentType = 'Degrees'">.0&amp;lt;Degrees>&lt;/xsl:when>

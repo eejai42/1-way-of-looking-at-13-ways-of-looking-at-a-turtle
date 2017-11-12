@@ -60,12 +60,12 @@ namespace CSharpLib1.BaseClasses
     // ======================================
     public abstract class W02FPTurtleBase : TurtleBase
     {
-        <xsl:for-each select="//PredifinedScript">
+        <xsl:for-each select="//PredefinedScript">
         <xsl:variable name="pds-name" select="Name" />
         public<xsl:if test="Version = 1"> override</xsl:if> void draw<xsl:value-of select="$pds-name" />()
         {
             this.log("PRINTING <xsl:value-of select="$pds-name" />!");
-            TurtleExtensions.CreateTurtle(log)<xsl:for-each select="//PredifinedScriptStep[normalize-space(PredefinedScript) = $pds-name]"><xsl:if test="normalize-space(Description) != ''">
+            TurtleExtensions.CreateTurtle(log)<xsl:for-each select="//PredefinedScriptStep[normalize-space(PredefinedScript) = $pds-name]"><xsl:if test="normalize-space(Description) != ''">
                 // <xsl:value-of select="Description" /></xsl:if><xsl:text>
                 .Do</xsl:text><xsl:value-of select="Command" />(<xsl:if test="ArgumentType = 'Color'">PenColor.</xsl:if><xsl:value-of select="Argument" />)</xsl:for-each>;
         }</xsl:for-each>

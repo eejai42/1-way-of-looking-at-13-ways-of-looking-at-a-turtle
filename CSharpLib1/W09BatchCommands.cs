@@ -1,14 +1,16 @@
 /* ======================================
-01-OOTurtle.fsx
+09-BatchCommands.fsx
 
 Part of "Thirteen ways of looking at a turtle"
 Related blog post: http://fsharpforfunandprofit.com/posts/13-ways-of-looking-at-a-turtle/
 ======================================
 
-Way 01: Simple OO -- a class with mutable state
+Way 09: Batch oriented -- Using a list of commands
 
-In this design, a simple OO class represents the turtle,
-and the client talks to the turtle directly.
+In this design, the client creates a list of `Command`s that will be intepreted later.
+These commands are then run in sequence using the Turtle library functions.
+
+This approach means that there is no state that needs to be persisted between calls by the client.
 ====================================== */
 using System;
 using System.Collections.Generic;
@@ -20,9 +22,9 @@ using CSharpLib1.BaseClasses;
 namespace CSharpLib1
 {
     // ======================================
-    // Way 01 Class
+    // Way 09 Class
     // ======================================
-    public class OOTurtle : W01OOTurtleBase
+    public class BatchCommands : W09BatchCommandsBase
     {
         // define a function that draws one side
         private void drawOneSide(Turtle turtle, float angleDegrees)

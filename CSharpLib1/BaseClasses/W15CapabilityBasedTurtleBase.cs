@@ -1,14 +1,16 @@
 /* ======================================
-01-OOTurtle.fsx
+15-CapabilityBasedTurtle.fsx
 
 Part of "Thirteen ways of looking at a turtle"
 Related blog post: http://fsharpforfunandprofit.com/posts/13-ways-of-looking-at-a-turtle/
 ======================================
 
-Way 01: Simple OO -- a class with mutable state
+Way 15: API with capabilities
 
-In this design, a simple OO class represents the turtle,
-and the client talks to the turtle directly.
+In this design, the turtle exposes a list of functions (capabilities) after each action.
+These are the ONLY actions available to the client
+
+More on capability-based security at http://fsharpforfunandprofit.com/posts/capability-based-security/
 ====================================== */
 using System;
 using System.Collections.Generic;
@@ -19,9 +21,9 @@ using System.Threading.Tasks;
 namespace CSharpLib1.BaseClasses
 {
     // ======================================
-    // Way 01 Helper Classes
+    // Way 15 Helper Classes
     // ======================================
-    public abstract class W01OOTurtleBase : TurtleBase
+    public abstract class W15CapabilityBasedTurtleBase : TurtleBase
     {
         
         

@@ -1,14 +1,17 @@
 /* ======================================
-01-OOTurtle.fsx
+14-AdtTurtle.fsx
 
 Part of "Thirteen ways of looking at a turtle"
 Related blog post: http://fsharpforfunandprofit.com/posts/13-ways-of-looking-at-a-turtle/
 ======================================
 
-Way 01: Simple OO -- a class with mutable state
+Way 14: Abstract Data Turtle - a private type with an associated module of functions
 
-In this design, a simple OO class represents the turtle,
-and the client talks to the turtle directly.
+In this design, the details of the turtle structure is hidden from the client,
+so the it could be changed without breaking any code.
+
+See https://www.reddit.com/r/fsharp/comments/36s0zr/structuring_f_programs_with_abstract_data_types/?
+for more on ADTs in F#.
 ====================================== */
 using System;
 using System.Collections.Generic;
@@ -20,9 +23,9 @@ using CSharpLib1.BaseClasses;
 namespace CSharpLib1
 {
     // ======================================
-    // Way 01 Class
+    // Way 14 Class
     // ======================================
-    public class OOTurtle : W01OOTurtleBase
+    public class AdtTurtle : W14AdtTurtleBase
     {
         // define a function that draws one side
         private void drawOneSide(Turtle turtle, float angleDegrees)

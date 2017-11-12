@@ -1,14 +1,16 @@
 /* ======================================
-01-OOTurtle.fsx
+07-DependencyInjection_Functions-1.fsx
 
 Part of "Thirteen ways of looking at a turtle"
 Related blog post: http://fsharpforfunandprofit.com/posts/13-ways-of-looking-at-a-turtle/
 ======================================
 
-Way 01: Simple OO -- a class with mutable state
+Way 07: Dependency injection using functions (v1: pass in all functions)
 
-In this design, a simple OO class represents the turtle,
-and the client talks to the turtle directly.
+In this design, an API layer communicates via one or more functions that are passed in as parameters to the API call.
+These functions are typically partially applied so that the call site is decoupled from the `injection`
+
+No interface is passed to the constructor.
 ====================================== */
 using System;
 using System.Collections.Generic;
@@ -20,9 +22,9 @@ using CSharpLib1.BaseClasses;
 namespace CSharpLib1
 {
     // ======================================
-    // Way 01 Class
+    // Way 07 Class
     // ======================================
-    public class OOTurtle : W01OOTurtleBase
+    public class DependencyInjection_Functions1 : W07DependencyInjection_Functions1Base
     {
         // define a function that draws one side
         private void drawOneSide(Turtle turtle, float angleDegrees)

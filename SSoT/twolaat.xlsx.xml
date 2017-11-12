@@ -301,18 +301,21 @@ More on capability-based security at http://fsharpforfunandprofit.com/posts/capa
     <DisplayName>Triangle</DisplayName>
     <Description>A 3 sided shape of size 100</Description>
     <IsActive>True</IsActive>
+    <Version>1</Version>
   </PredifinedScript>
   <PredifinedScript>
     <Name>ThreeLines</Name>
     <DisplayName>Three Lines</DisplayName>
     <Description>Draw three paralell lines of length 100, 50 pixels apart</Description>
     <IsActive>True</IsActive>
+    <Version>1</Version>
   </PredifinedScript>
   <PredifinedScript>
     <Name>Box</Name>
     <DisplayName>Box</DisplayName>
     <Description>Draw a 4 sided cube</Description>
     <IsActive>False</IsActive>
+    <Version>2</Version>
   </PredifinedScript>
 </PredifinedScripts><PredifinedScriptSteps>
   <PredifinedScriptStep>

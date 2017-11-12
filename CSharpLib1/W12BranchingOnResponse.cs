@@ -1,14 +1,16 @@
 /* ======================================
-01-OOTurtle.fsx
+12-BranchingOnResponse.fsx
 
 Part of "Thirteen ways of looking at a turtle"
 Related blog post: http://fsharpforfunandprofit.com/posts/13-ways-of-looking-at-a-turtle/
 ======================================
 
-Way 01: Simple OO -- a class with mutable state
+Way 12: Monadic control flow -- Making decisions in the turtle computation expression
 
-In this design, a simple OO class represents the turtle,
-and the client talks to the turtle directly.
+In this design, the turtle can reply to certain commands with errors.
+
+The code demonstrates how the client can make decisions inside the turtle computation expression
+while the state is being passed around behind the scenes.
 ====================================== */
 using System;
 using System.Collections.Generic;
@@ -20,9 +22,9 @@ using CSharpLib1.BaseClasses;
 namespace CSharpLib1
 {
     // ======================================
-    // Way 01 Class
+    // Way 12 Class
     // ======================================
-    public class OOTurtle : W01OOTurtleBase
+    public class BranchingOnResponse : W12BranchingOnResponseBase
     {
         // define a function that draws one side
         private void drawOneSide(Turtle turtle, float angleDegrees)

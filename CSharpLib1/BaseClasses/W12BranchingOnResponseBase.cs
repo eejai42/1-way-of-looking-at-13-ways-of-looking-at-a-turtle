@@ -1,14 +1,16 @@
 /* ======================================
-01-OOTurtle.fsx
+12-BranchingOnResponse.fsx
 
 Part of "Thirteen ways of looking at a turtle"
 Related blog post: http://fsharpforfunandprofit.com/posts/13-ways-of-looking-at-a-turtle/
 ======================================
 
-Way 01: Simple OO -- a class with mutable state
+Way 12: Monadic control flow -- Making decisions in the turtle computation expression
 
-In this design, a simple OO class represents the turtle,
-and the client talks to the turtle directly.
+In this design, the turtle can reply to certain commands with errors.
+
+The code demonstrates how the client can make decisions inside the turtle computation expression
+while the state is being passed around behind the scenes.
 ====================================== */
 using System;
 using System.Collections.Generic;
@@ -19,9 +21,9 @@ using System.Threading.Tasks;
 namespace CSharpLib1.BaseClasses
 {
     // ======================================
-    // Way 01 Helper Classes
+    // Way 12 Helper Classes
     // ======================================
-    public abstract class W01OOTurtleBase : TurtleBase
+    public abstract class W12BranchingOnResponseBase : TurtleBase
     {
         
         

@@ -1,14 +1,18 @@
 /* ======================================
-01-OOTurtle.fsx
+08-StateMonad.fsx
 
 Part of "Thirteen ways of looking at a turtle"
 Related blog post: http://fsharpforfunandprofit.com/posts/13-ways-of-looking-at-a-turtle/
 ======================================
 
-Way 01: Simple OO -- a class with mutable state
+Way 08: Batch oriented -- Using a state monad (computation expression)
 
-In this design, a simple OO class represents the turtle,
-and the client talks to the turtle directly.
+In this design, the client uses the FP Turtle functions directly.
+
+As before, the client must keep track of the current state and pass it into the next function call,
+but this time the state is kept out of sight by using a State monad (called `turtle` computation expression here)
+
+As a result, there are no mutables anywhere.
 ====================================== */
 using System;
 using System.Collections.Generic;
@@ -19,9 +23,9 @@ using System.Threading.Tasks;
 namespace CSharpLib1.BaseClasses
 {
     // ======================================
-    // Way 01 Helper Classes
+    // Way 08 Helper Classes
     // ======================================
-    public abstract class W01OOTurtleBase : TurtleBase
+    public abstract class W08StateMonadBase : TurtleBase
     {
         
         

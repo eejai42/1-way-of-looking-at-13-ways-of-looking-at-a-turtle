@@ -1,14 +1,18 @@
 /* ======================================
-01-OOTurtle.fsx
+04-Api_FP_Core.fsx
 
 Part of "Thirteen ways of looking at a turtle"
 Related blog post: http://fsharpforfunandprofit.com/posts/13-ways-of-looking-at-a-turtle/
 ======================================
 
-Way 01: Simple OO -- a class with mutable state
+Way 04: API (OO/FP hybrid approach) -- OO API calling stateless functions
 
-In this design, a simple OO class represents the turtle,
-and the client talks to the turtle directly.
+In this design, an API layer communicates with pure turtle functions
+and the client talks to the API layer.
+
+The API layer manages the state (rather than the client) by storing a mutable turtle state.
+
+*This approach has been named \
 ====================================== */
 using System;
 using System.Collections.Generic;
@@ -19,9 +23,9 @@ using System.Threading.Tasks;
 namespace CSharpLib1.BaseClasses
 {
     // ======================================
-    // Way 01 Helper Classes
+    // Way 04 Helper Classes
     // ======================================
-    public abstract class W01OOTurtleBase : TurtleBase
+    public abstract class W04Api_FP_CoreBase : TurtleBase
     {
         
         

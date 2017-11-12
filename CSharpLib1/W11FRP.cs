@@ -1,14 +1,18 @@
 /* ======================================
-01-OOTurtle.fsx
+11-FRP.fsx
 
 Part of "Thirteen ways of looking at a turtle"
 Related blog post: http://fsharpforfunandprofit.com/posts/13-ways-of-looking-at-a-turtle/
 ======================================
 
-Way 01: Simple OO -- a class with mutable state
+Way 11: Functional Retroactive Programming -- Business logic is based on reacting to earlier events
 
-In this design, a simple OO class represents the turtle,
-and the client talks to the turtle directly.
+In this design, the `write-side` follows the same pattern as the event-sourcing example.
+A client sends a Command to a CommandHandler, which converts that to a list of events and stores them in an EventStore.
+
+However in this design, the CommandHandler only updates state and does NOT do any complex business logic.
+
+The domain logic is done on the \
 ====================================== */
 using System;
 using System.Collections.Generic;
@@ -20,9 +24,9 @@ using CSharpLib1.BaseClasses;
 namespace CSharpLib1
 {
     // ======================================
-    // Way 01 Class
+    // Way 11 Class
     // ======================================
-    public class OOTurtle : W01OOTurtleBase
+    public class FRP : W11FRPBase
     {
         // define a function that draws one side
         private void drawOneSide(Turtle turtle, float angleDegrees)

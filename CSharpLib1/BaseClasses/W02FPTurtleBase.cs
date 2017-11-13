@@ -52,8 +52,28 @@ namespace CSharpLib1.BaseClasses
             return turtle;
         }
         
+        public static Turtle DoDrawPolygon(this Turtle turtle, int Sides) {
+            turtle.DrawPolygon(Sides);
+            return turtle;
+        }
+        
+        public static Turtle DoDrawLine(this Turtle turtle, float Distance) {
+            turtle.DrawLine(Distance);
+            return turtle;
+        }
+        
         public static Turtle DoTurnSide(this Turtle turtle, int Sides) {
             turtle.TurnSide(Sides);
+            return turtle;
+        }
+        
+        public static Turtle DoRepeat(this Turtle turtle, int Repeat) {
+            turtle.Repeat(Repeat);
+            return turtle;
+        }
+        
+        public static Turtle DoExec(this Turtle turtle, string Command) {
+            turtle.Exec(Command);
             return turtle;
         }
         

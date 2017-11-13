@@ -484,6 +484,26 @@
                     "IsCollection": "0"
                   },
                   {
+                    "Name": "Parameter2",
+                    "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
+                    "DataType": "TEXT",
+                    "Length": "100",
+                    "IsNullable": "1",
+                    "IsPrimaryKey": "0",
+                    "IsAttribute": "0",
+                    "IsCollection": "0"
+                  },
+                  {
+                    "Name": "Parameter2Type",
+                    "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
+                    "DataType": "TEXT",
+                    "Length": "100",
+                    "IsNullable": "1",
+                    "IsPrimaryKey": "0",
+                    "IsAttribute": "0",
+                    "IsCollection": "0"
+                  },
+                  {
                     "Name": "Version",
                     "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
                     "DataType": "BYTE",
@@ -1002,6 +1022,22 @@
           {
             "ObjectName": "TurtleCommand",
             "PropertyName": "ParameterType",
+            "DataType": "xs:string",
+            "IsAttribute": "0",
+            "IsNullable": "1",
+            "IsCollection": "0"
+          },
+          {
+            "ObjectName": "TurtleCommand",
+            "PropertyName": "Parameter2",
+            "DataType": "xs:string",
+            "IsAttribute": "0",
+            "IsNullable": "1",
+            "IsCollection": "0"
+          },
+          {
+            "ObjectName": "TurtleCommand",
+            "PropertyName": "Parameter2Type",
             "DataType": "xs:string",
             "IsAttribute": "0",
             "IsNullable": "1",

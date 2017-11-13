@@ -74,6 +74,8 @@
                     <xs:element name="Description" type="xs:string" />
                     <xs:element minOccurs="0" name="Parameter" type="xs:string" />
                     <xs:element minOccurs="0" name="ParameterType" type="xs:string" />
+                    <xs:element minOccurs="0" name="Parameter2" type="xs:string" />
+                    <xs:element minOccurs="0" name="Parameter2Type" type="xs:string" />
                     <xs:element name="Version" type="xs:unsignedByte" />
                     <xs:element minOccurs="0" name="Min" type="xs:unsignedByte" />
                     <xs:element minOccurs="0" name="Max" type="xs:unsignedShort" />

@@ -301,14 +301,54 @@ More on capability-based security at http://fsharpforfunandprofit.com/posts/capa
     <APIName>SetColor</APIName>
   </TurtleCommand>
   <TurtleCommand>
-    <Name>TurnSide</Name>
+    <Name>DrawPolygon</Name>
     <Description>Turn the number of degrees based on the number of sides passed in</Description>
     <Parameter>Sides</Parameter>
     <ParameterType>int</ParameterType>
     <Version>2</Version>
     <Min>0</Min>
     <Max>360</Max>
+    <APIName>DrawPolygon</APIName>
+  </TurtleCommand>
+  <TurtleCommand>
+    <Name>DrawLine</Name>
+    <Description>Put the pen down, move distance and the left the pen up</Description>
+    <Parameter>Distance</Parameter>
+    <ParameterType>float</ParameterType>
+    <Version>3</Version>
+    <Min>0</Min>
+    <Max>1000</Max>
+    <APIName>DrawLine</APIName>
+  </TurtleCommand>
+  <TurtleCommand>
+    <Name>TurnSide</Name>
+    <Description>Turn the number of degrees based on the number of sides</Description>
+    <Parameter>Sides</Parameter>
+    <ParameterType>int</ParameterType>
+    <Version>3</Version>
+    <Min>0</Min>
+    <Max>360</Max>
     <APIName>TurnSide</APIName>
+  </TurtleCommand>
+  <TurtleCommand>
+    <Name>Repeat</Name>
+    <Description>Repeats the previous N commands the specified number of times</Description>
+    <Parameter>Repeat</Parameter>
+    <ParameterType>int</ParameterType>
+    <Parameter2>Commands</Parameter2>
+    <Parameter2Type>int</Parameter2Type>
+    <Version>3</Version>
+    <Min>0</Min>
+    <Max>360</Max>
+    <APIName>Repeat</APIName>
+  </TurtleCommand>
+  <TurtleCommand>
+    <Name>Exec</Name>
+    <Description>Executes the given command</Description>
+    <Parameter>Command</Parameter>
+    <ParameterType>string</ParameterType>
+    <Version>3</Version>
+    <APIName>Exec</APIName>
   </TurtleCommand>
 </TurtleCommands><PredefinedScripts>
   <PredefinedScript>

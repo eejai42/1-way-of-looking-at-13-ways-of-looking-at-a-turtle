@@ -260,44 +260,55 @@ More on capability-based security at http://fsharpforfunandprofit.com/posts/capa
 </PenStates><TurtleCommands>
   <TurtleCommand>
     <Name>Move</Name>
-    <Description>Move a distance</Description>
+    <Description>Moves the specified distance in whatever direction 'the turtle' is currently pointing.</Description>
     <Parameter>Distance</Parameter>
     <ParameterType>float</ParameterType>
     <Version>1</Version>
+    <Min>0</Min>
+    <Max>1000</Max>
     <APIName>Move</APIName>
   </TurtleCommand>
   <TurtleCommand>
     <Name>Turn</Name>
+    <Description>Turn the specified degrees from the current position</Description>
     <Parameter>Degrees</Parameter>
     <ParameterType>float</ParameterType>
     <Version>1</Version>
+    <Min>0</Min>
+    <Max>360</Max>
     <APIName>Turn</APIName>
   </TurtleCommand>
   <TurtleCommand>
     <Name>PenUp</Name>
+    <Description>Lift the pen off of the paper</Description>
     <Version>1</Version>
     <APIName>Pen</APIName>
     <APIArgument>Up</APIArgument>
   </TurtleCommand>
   <TurtleCommand>
     <Name>PenDown</Name>
+    <Description>Put the pen down on the paper</Description>
     <Version>1</Version>
     <APIName>Pen</APIName>
     <APIArgument>Down</APIArgument>
   </TurtleCommand>
   <TurtleCommand>
     <Name>SetColor</Name>
+    <Description>Set the color of the pen</Description>
     <Parameter>Color</Parameter>
     <ParameterType>PenColor</ParameterType>
     <Version>1</Version>
     <APIName>SetColor</APIName>
   </TurtleCommand>
   <TurtleCommand>
-    <Name>DrawPolygon</Name>
+    <Name>TurnSide</Name>
+    <Description>Turn the number of degrees based on the number of sides passed in</Description>
     <Parameter>Sides</Parameter>
     <ParameterType>int</ParameterType>
     <Version>2</Version>
-    <APIName>DrawPolygon</APIName>
+    <Min>0</Min>
+    <Max>360</Max>
+    <APIName>TurnSide</APIName>
   </TurtleCommand>
 </TurtleCommands><PredefinedScripts>
   <PredefinedScript>

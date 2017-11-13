@@ -34,6 +34,7 @@
                 inspired me to use it has the basis for demonstrating the power of having a
                 Single Source of Truth (SSoT) when developing software.
             </p>
+            <p>The code can be found on <a href="https://github.com/eejai42/13-ways-of-looking-at-a-turtle">GitHub Fork</a>.</p>
 
             <p>
                 The purpose of the original article, was to demonstrate 13 different ways
@@ -42,9 +43,38 @@
                 In other words, the decision of what the code should be is already decided.
             </p>
             <p>
-                The question asked by this fork of the repo is, what's the best way to 
-                Create/Manage that code.
+                The question asked by this fork of the repo is, what would be the best way to 
+                Create/Manage that code in a "production" environment.
             </p>
+            <p>
+                The code in this branch have been creatd by following the following steps
+                in an iterative fashion.  To begin with, I created an empty Single Source
+                of Truth (<b>SSoT</b>) in the form of a <a href="https://docs.google.com/spreadsheets/d/1kjyb0JGswSufELAKuy5jtuhs6I0ZyvY9Zwa5Nei6aAo/edit#gid=1093073527" target="_13wgsheet">Google Spreadsheet</a>. 
+                This SSoT serves as the place to put decisions.  Specifically, things that
+                are true independantly of which language or context/environment that it's used.
+            </p>
+            <ol>
+                <li>Copy information from the code into the <a href="https://docs.google.com/spreadsheets/d/1kjyb0JGswSufELAKuy5jtuhs6I0ZyvY9Zwa5Nei6aAo/edit#gid=1093073527" target="_13wgsheet">SSoT Google Spreadsheet</a></li>
+                <li>Prototype a change to the code based on that information</li>
+                <li>Create a tool which can write that kind of code</li>
+                <li>Rinse and Repeat</li>
+            </ol>
+            <p>
+                Included next are examples of the kind of information which is usually embeeded in
+                "source code" directly, but which are much better described outside of the code.
+                Databases and Spreadsheets work well for SSoT - but there are many options for
+                gathering SSoT data from. 
+            </p>
+            <p>
+                The kinds of data that were moved over to the SSoT are:
+            </p>
+            <ul>
+                <li>First and foremost - the list of "ways" of looking at a turtle</li>
+                <li>Valid Turtle Commands (like move/turn/...)</li>
+                <li>Common Shapes (like Triangle and ThreeLines)</li>
+                <li>The specific commands for those shapes</li>
+                <li>See the <a href="https://docs.google.com/spreadsheets/d/1kjyb0JGswSufELAKuy5jtuhs6I0ZyvY9Zwa5Nei6aAo/edit#gid=1093073527" target="_13wgsheet">SSoT Google Spreadsheet</a> for more</li>
+            </ul>
             <h3>Commands</h3>
             <p>
                 The "basic" Turtle is able to perform these commands.
@@ -84,7 +114,7 @@
                 Turtle Commands to complete a certain sequence of steps (a "PredefinedScriptStep").
             </p>
             <p>
-                At this point in time, the SSoT for this project includes <xsl:value-of select="count(//PredefinedScript)"/> Predefined
+                At this point in time, the SSoT for this project includes <xsl:value-of select="count(//PredefinedScripts/PredefinedScript)"/> Predefined
                 Scripts.  They are:
             </p>
             <ul>
@@ -101,11 +131,12 @@
            </ul>
            <h3>The Ways</h3>
             <p>
-                Let's start by looking at "the ways".
+                The purpose of this code is demonstrate different ways to solve the same problem. 
+                Variations on a theme.  These <xsl:value-of select="count(//WayOfLookingAtATurtle)" /> are listed below.
             </p>
             <xsl:for-each select="//WayOfLookingAtATurtle">
                 <div style="font-size: 0.8em; margin-top: 1em;">
-                    <h5><xsl:value-of select="Name"/></h5>
+                    <h5><xsl:value-of select="DisplayWayNumber"/> - <xsl:value-of select="Name"/></h5>
                     <div style="whitespace: pre-wrap">
                         <xsl:value-of select="Description"/>
                     </div>

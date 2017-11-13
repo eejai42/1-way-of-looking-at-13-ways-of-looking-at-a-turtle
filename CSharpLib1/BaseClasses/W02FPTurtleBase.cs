@@ -52,8 +52,8 @@ namespace CSharpLib1.BaseClasses
             return turtle;
         }
         
-        public static Turtle DoDrawPolygon(this Turtle turtle, int Sides) {
-            turtle.DrawPolygon(Sides);
+        public static Turtle DoTurnSide(this Turtle turtle, int Sides) {
+            turtle.TurnSide(Sides);
             return turtle;
         }
         

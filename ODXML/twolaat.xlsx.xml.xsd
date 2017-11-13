@@ -71,10 +71,12 @@
                 <xs:complexType>
                   <xs:sequence>
                     <xs:element name="Name" type="xs:string" />
-                    <xs:element minOccurs="0" name="Description" type="xs:string" />
+                    <xs:element name="Description" type="xs:string" />
                     <xs:element minOccurs="0" name="Parameter" type="xs:string" />
                     <xs:element minOccurs="0" name="ParameterType" type="xs:string" />
                     <xs:element name="Version" type="xs:unsignedByte" />
+                    <xs:element minOccurs="0" name="Min" type="xs:unsignedByte" />
+                    <xs:element minOccurs="0" name="Max" type="xs:unsignedShort" />
                     <xs:element name="APIName" type="xs:string" />
                     <xs:element minOccurs="0" name="APIArgument" type="xs:string" />
                   </xs:sequence>

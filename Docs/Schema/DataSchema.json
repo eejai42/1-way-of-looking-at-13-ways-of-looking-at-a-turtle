@@ -494,6 +494,26 @@
                     "IsCollection": "0"
                   },
                   {
+                    "Name": "Min",
+                    "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
+                    "DataType": "BYTE",
+                    "Length": "",
+                    "IsNullable": "1",
+                    "IsPrimaryKey": "0",
+                    "IsAttribute": "0",
+                    "IsCollection": "0"
+                  },
+                  {
+                    "Name": "Max",
+                    "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
+                    "DataType": "SHORT",
+                    "Length": "",
+                    "IsNullable": "1",
+                    "IsPrimaryKey": "0",
+                    "IsAttribute": "0",
+                    "IsCollection": "0"
+                  },
+                  {
                     "Name": "APIName",
                     "Namespace": "com.anabstractlevel.Schemas.ODXMLSchema.",
                     "DataType": "TEXT",
@@ -991,6 +1011,22 @@
             "ObjectName": "TurtleCommand",
             "PropertyName": "Version",
             "DataType": "xs:unsignedByte",
+            "IsAttribute": "0",
+            "IsNullable": "1",
+            "IsCollection": "0"
+          },
+          {
+            "ObjectName": "TurtleCommand",
+            "PropertyName": "Min",
+            "DataType": "xs:unsignedByte",
+            "IsAttribute": "0",
+            "IsNullable": "1",
+            "IsCollection": "0"
+          },
+          {
+            "ObjectName": "TurtleCommand",
+            "PropertyName": "Max",
+            "DataType": "xs:unsignedShort",
             "IsAttribute": "0",
             "IsNullable": "1",
             "IsCollection": "0"

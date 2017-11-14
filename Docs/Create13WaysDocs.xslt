@@ -34,7 +34,7 @@
                 inspired me to use it has the basis for demonstrating the power of having a
                 Single Source of Truth (SSoT) when developing software.
             </p>
-            <p>The code can be found on <a href="https://github.com/eejai42/13-ways-of-looking-at-a-turtle">GitHub Fork</a>.</p>
+            <p>The code can be found on <a href="https://github.com/eejai42/13-ways-of-looking-at-a-turtle">GitHub</a>.</p>
 
             <p>
                 The purpose of the original article, was to demonstrate 13 different ways
@@ -47,7 +47,7 @@
                 Create/Manage that code in a "production" environment.
             </p>
             <p>
-                The code in this branch have been creatd by following the following steps
+                The code in this branch have been created by following the following steps
                 in an iterative fashion.  To begin with, I created an empty Single Source
                 of Truth (<b>SSoT</b>) in the form of a <a href="https://docs.google.com/spreadsheets/d/1kjyb0JGswSufELAKuy5jtuhs6I0ZyvY9Zwa5Nei6aAo/edit#gid=1093073527" target="_13wgsheet">Google Spreadsheet</a>. 
                 This SSoT serves as the place to put decisions.  Specifically, things that
@@ -55,8 +55,10 @@
             </p>
             <ol>
                 <li>Copy information from the code into the <a href="https://docs.google.com/spreadsheets/d/1kjyb0JGswSufELAKuy5jtuhs6I0ZyvY9Zwa5Nei6aAo/edit#gid=1093073527" target="_13wgsheet">SSoT Google Spreadsheet</a></li>
-                <li>Prototype a change to the code based on that information</li>
-                <li>Create a tool which can write that kind of code</li>
+                <li>Prototype a change in the code, which isolates the parts dealing with the new SSoT</li>
+                <li>Create a tool (or use an existing tool) which can write that kind of code (for the full set).</li>
+                <li>Update the "hand code" to call the "derived" version fo the code</li>
+                <li>Delete the hand code version</li>
                 <li>Rinse and Repeat</li>
             </ol>
             <p>
